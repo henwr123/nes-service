@@ -48,10 +48,17 @@ app.get('/games', (req, res) => {
     if (req.query.publisher) {
         list = list.filter((game) => game.publisher.toLowerCase().includes(req.query.publisher.toLowerCase()));
     }
+    if (req.query.ersb) {
+        list = list.filter((game) => game.ersb.toLowerCase().includes(req.query.ersb.toLowerCase()));
+    }
+    if (req.query.upc) {
+        list = list.filter((game) => game.upc.toLowerCase().includes(req.query.upc.toLowerCase()));
+    }
 
-
+    // sort on the sortable name
     list.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
 
+    // send the resulting list in the response
     res.send(list);
 
 });
