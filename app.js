@@ -18,7 +18,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
  * Get list of games with filtering
  */
 app.get('/games', (req, res) => {
-    res.send(catalog);
+
+    if(req.query.name){
+        res.send(catalog.filter((game) => game.name.toLowerCase().includes(req.query.name.toLowerCase())));
+    } else {
+        res.send(catalog);
+    }
 });
 
 app.listen(port, () => {
