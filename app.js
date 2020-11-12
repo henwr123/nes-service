@@ -13,7 +13,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
+/**
+ * Get a single item by id
+ * ex. ../games/NES-XX-USA
+ */
 app.get('/games/:id', (req, res) => {
 
     const id = req.params.id;
@@ -30,6 +33,8 @@ app.get('/games/:id', (req, res) => {
 app.get('/games', (req, res) => {
 
     console.log(`request for games`);
+
+    catalog.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
 
     if (req.query.name) {
         res.send(catalog.filter((game) => game.name.toLowerCase().includes(req.query.name.toLowerCase())));

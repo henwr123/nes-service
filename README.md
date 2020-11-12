@@ -7,4 +7,4 @@ A service for providing NES data
 Use `npm start` to start the service
 
 # Data
-Currently data are maintained in an Excel spreadsheet.  I use the https://codebeautify.org/excel-to-json to convert the Excel to JSON to be used for the mock data
+Currently data are maintained in an Excel spreadsheet.  I use the tool https://www.aconvert.com/document/xls-to-json/ to convert the Excel to JSON to be used for the mock data
