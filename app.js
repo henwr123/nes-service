@@ -36,6 +36,9 @@ app.get('/games', (req, res) => {
 
     let list = catalog;
 
+    if (req.query.id) {
+        list = list.filter((game) => game.id.toLowerCase().includes(req.query.id.toLowerCase()));
+    }
     if (req.query.name) {
         list = list.filter((game) => game.name.toLowerCase().includes(req.query.name.toLowerCase()));
     }
@@ -57,6 +60,9 @@ app.get('/games', (req, res) => {
 
     // sort on the sortable name
     list.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
+    
+    //Example of multiple sorting case
+    //list.sort((a, b) => (a.developer > b.developer) ? 1 : (a.developer === b.developer) ? ((a.sortName > b.sortName) ? 1 : -1) : -1 )
 
     // send the resulting list in the response
     res.send(list);
