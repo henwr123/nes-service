@@ -1,0 +1,28 @@
+{
+  "name": "nes-service",
+  "version": "1.0.0",
+  "description": "Service for NES data",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henwr123/nes-service.git"
+  },
+  "keywords": [
+    "NES"
+  ],
+  "author": "henwr123",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henwr123/nes-service/issues"
+  },
+  "homepage": "https://github.com/henwr123/nes-service#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
