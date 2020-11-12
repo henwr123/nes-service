@@ -34,13 +34,26 @@ app.get('/games', (req, res) => {
 
     console.log(`request for games`);
 
-    catalog.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
+    let list = catalog;
 
     if (req.query.name) {
-        res.send(catalog.filter((game) => game.name.toLowerCase().includes(req.query.name.toLowerCase())));
-    } else {
-        res.send(catalog);
+        list = list.filter((game) => game.name.toLowerCase().includes(req.query.name.toLowerCase()));
     }
+    if (req.query.category) {
+        list = list.filter((game) => game.category.toLowerCase().includes(req.query.category.toLowerCase()));
+    }
+    if (req.query.developer) {
+        list = list.filter((game) => game.developer.toLowerCase().includes(req.query.developer.toLowerCase()));
+    }
+    if (req.query.publisher) {
+        list = list.filter((game) => game.publisher.toLowerCase().includes(req.query.publisher.toLowerCase()));
+    }
+
+
+    list.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
+
+    res.send(list);
+
 });
 
 app.listen(port, () => {
