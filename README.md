@@ -34,5 +34,9 @@ Many data sources were used to build the information.
 - https://en.wikipedia.org/wiki/List_of_Nintendo_Entertainment_System_games - list with most games and publisher details
 - https://nesdir.github.io/ - for board details and the catalog id
 - https://nes.fandom.com/wiki/List_of_Nintendo_Entertainment_System_games - Some additional details like release date
+- https://www.lukiegames.com/nintendo-nes-video-games.html - Used to fill in the blanks
 
-Data are imported into a spreadsheet to combine data and to make adjustments.  Other data points were researched and added manually.  Data are convert to JSON and added to the project for the data source/
+Data are imported into a spreadsheet to combine data and to make adjustments.  Other data points were researched and added manually.  Data are convert to JSON and added to the project for the data source.
+
+## What about images?
+Box art images can be downloaded from http://www.ubernes.com/nesboxart.html.  The names must be mapped to the Catalog ID and will need to be hosted elsewhere.  To access the resource, the application will provide the base URI with the Catalog ID.
