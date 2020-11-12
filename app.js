@@ -14,12 +14,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
+app.get('/games/:id', (req, res) => {
+
+    const id = req.params.id;
+
+    console.log(`request for game with id ${id}`);
+
+    res.send(catalog.find(game => game.id === id));
+
+});
+
 /**
  * Get list of games with filtering
  */
 app.get('/games', (req, res) => {
 
-    if(req.query.name){
+    console.log(`request for games`);
+
+    if (req.query.name) {
         res.send(catalog.filter((game) => game.name.toLowerCase().includes(req.query.name.toLowerCase())));
     } else {
         res.send(catalog);
