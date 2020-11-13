@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const games = require('./mock-games');
+const e = require('express');
 
 
 const app = express();
@@ -57,12 +58,21 @@ app.get('/games', (req, res) => {
     if (req.query.upc) {
         list = list.filter((game) => game.upc.toLowerCase().includes(req.query.upc.toLowerCase()));
     }
+    if (req.query.releaseDate) {
+        list = list.filter((game) => game.releaseDate.toLowerCase().includes(req.query.releaseDate.toLowerCase()));
+    }
+    if (req.query.players) {
+        list = list.filter((game) => game.players.toLowerCase().includes(req.query.players.toLowerCase()));
+    }
 
-    // sort on the sortable name
-    list.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
-    
-    //Example of multiple sorting case
-    //list.sort((a, b) => (a.developer > b.developer) ? 1 : (a.developer === b.developer) ? ((a.sortName > b.sortName) ? 1 : -1) : -1 )
+
+    if (req.query.sortBy) {
+        list.sort((a, b) => (a[req.query.sortBy] > b[req.query.sortBy]) ? 1 : (a[req.query.sortBy] === b[req.query.sortBy]) ? ((a.sortName > b.sortName) ? 1 : -1) : -1)
+    } else {
+        list.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
+    }
+
+    console.log(` ~ found ${list.length} records`);
 
     // send the resulting list in the response
     res.send(list);
