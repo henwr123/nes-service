@@ -2,8 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const games = require('./mock-games');
-const e = require('express');
-
 
 const app = express();
 const port = 3000;
