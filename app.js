@@ -4,7 +4,7 @@ const cors = require('cors');
 const games = require('./mock-games');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const catalog = games;
 
 app.use(cors());
@@ -22,7 +22,17 @@ app.get('/games/:id', (req, res) => {
 
     console.log(`request for game with id ${id}`);
 
-    res.send(catalog.find(game => game.id === id));
+    const game = catalog.find(game => game.id === id);
+
+    if (game) {
+        console.log(` --~ found ${game.name}`);
+        res.send(game);
+    } else {
+        //throw new Error(`Nothing found for id ${id}`);
+        console.log(`Nothing found for id ${id}`);
+
+        res.sendStatus(404);
+    }
 
 });
 
@@ -70,7 +80,7 @@ app.get('/games', (req, res) => {
         list.sort((a, b) => (a.sortName > b.sortName) ? 1 : -1);
     }
 
-    console.log(` ~ found ${list.length} records`);
+    console.log(` --~ found ${list.length} records`);
 
     // send the resulting list in the response
     res.send(list);
