@@ -35,6 +35,7 @@ Many data sources were used to build the information.
 - https://nesdir.github.io/ - for board details and the catalog id
 - https://nes.fandom.com/wiki/List_of_Nintendo_Entertainment_System_games - Some additional details like release date
 - https://www.lukiegames.com/nintendo-nes-video-games.html - Used to fill in the blanks
+- http://bootgod.dyndns.org:7777/contrib.php - cartdb datasource
 
 Data are imported into a spreadsheet to combine data and to make adjustments.  Other data points were researched and added manually.  Data are convert to JSON and added to the project for the data source.
 
