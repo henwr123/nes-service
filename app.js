@@ -1,39 +1,108 @@
 const express = require('express');
+const sqlite3 = require('sqlite3')
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const games = require('./mock-games');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const catalog = games;
 
 app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+const db = new sqlite3.Database('./games.db', (err) => {
+    if (err) {
+        console.error('Error opening database: ${ err.message }')
+    } 
+})
+
+
+
+/**
+ * Build the filtering parameters
+ * @param {*} params - the req.query object 
+ * @returns Filtering string
+ */
+ function buildFilteringWhereClause(params) {
+
+    let filter = ""
+
+    Object.entries(params).forEach(entry => {
+
+        let key = entry[0];
+        let value = entry[1];
+
+        // ignore the orderBy parameter
+        if (key === 'orderBy' || key === 'orderDir') {
+            return
+        }
+
+        if (filter === "") {
+            filter = ' WHERE ' + key + ' LIKE "' + value + '" '
+        } else {
+            filter = filter + 'AND ' + key + ' LIKE "' + value + '" '
+        }
+    })
+
+    return filter
+}
+
+/**
+ * Build the OrderBy clause based upon the provided parameters
+ * @param {*} params 
+ * @param {*} def 
+ * @returns 
+ */
+function buildSortingOrderBy(params, def = 'catalog_id') {
+
+    let sort = ""
+
+    if (params.orderBy !== undefined) {
+        sort = " ORDER BY " + params.orderBy
+    } else {
+        sort = " ORDER BY " + def
+    }
+
+    // do not apply the order direction if a sorting property was not applied
+    if (params.orderDir !== undefined && params.orderBy !== undefined) {
+        sort = sort + " " + params.orderDir
+    } 
+    return sort
+}
+
+
+
 /**
  * Get a single item by id
  * ex. ../games/NES-XX-USA
  */
-app.get('/games/:id', (req, res) => {
+app.get('/games/:catalog_id', (req, res) => {
 
-    const id = req.params.id;
 
-    console.log(`request for game with id ${id}`);
+    var params = [req.params.catalog_id]
 
-    const game = catalog.find(game => game.id === id);
+    db.get("SELECT * FROM cartdb WHERE catalog_id = ?", params, (err, row) => {
 
-    if (game) {
-        console.log(` --~ found ${game.name}`);
-        res.send(game);
-    } else {
-        //throw new Error(`Nothing found for id ${id}`);
-        console.log(`Nothing found for id ${id}`);
+        if (err) {
+            console.error(`❗  Games - Error - ${err.message}`)
+            res.status(400).json({ error: err.message }).end()
+            return
+        }
 
-        res.sendStatus(404);
-    }
+        // No results from the selection
+        if (row === undefined) {
+            console.error(`❌  Games - Nothing found for id ${params}`)
+            res.status(404).json({ message: `Games - nothing found for id ${params}` }).end()
+            return
+        }
 
+        // return the single result
+        res.status(200).json(row).end()
+
+        console.log(`✔️  Games - Found game with id ${params}`)
+    })
 });
 
 /**
@@ -41,9 +110,31 @@ app.get('/games/:id', (req, res) => {
  */
 app.get('/games', (req, res) => {
 
-    console.log(`request for games`);
+    console.log(`🔎  request for games`);
 
-    let list = catalog;
+
+    let query = "SELECT * FROM cartdb" + buildFilteringWhereClause(req.query) + buildSortingOrderBy(req.query, "title")
+
+    db.all(query, [], (err, rows) => {
+
+        if (err) {
+            console.error(`❗  Games - Error - ${err.message}`)
+            res.status(400).json({ error: err.message }).end()
+            return
+        }
+
+        res.status(200).json({
+            count: rows.length,
+            results: rows
+        }).end()
+
+        console.log(`✔️  Games - Found ${rows.length} records`)
+    })
+
+
+
+
+/*     let list = catalog;
 
     if (req.query.id) {
         list = list.filter((game) => game.id.toLowerCase().includes(req.query.id.toLowerCase()));
@@ -83,7 +174,7 @@ app.get('/games', (req, res) => {
     console.log(` --~ found ${list.length} records`);
 
     // send the resulting list in the response
-    res.send(list);
+    res.send(list); */
 
 });
 

@@ -1,5 +1,5 @@
 # nes-service
-A service for providing NES data
+A service for providing NES data with data persistency using SQLite database.
 
 
 # Execution
@@ -24,9 +24,53 @@ Returns the game that has the provided identifier.
 # Data
 
 ## Data Source
-Currently data are maintained in an Excel spreadsheet.  I use the tool https://www.aconvert.com/document/xls-to-json/ to convert the Excel to JSON to be used for the mock data.  Data will be moved to a database in a future release (perhaps CouchDB).
+Data are stored in a SQLite database.
 
-The key to the data is the Catalgo ID (or id in the result).  The id is the identifier that Nintendo gave to a licensed game and is promenently displayed on the sticker of the cataridge.  This service is currently limited to the US release to avoid "duplicates" when the Japan and European markets are added.  Unlicensed games will not be included.
+## Table **catalog**
+The **catalog** table contains the list of NES games along with the information that is important about the game.  
+
+| Field | Data Type | Description |
+|---|---|---|
+| id | string | Game identifier - The id is the identifier that Nintendo gave to a licensed game and is promenently displayed on the sticker of the cataridge, otherwise a unique identifier that is generated |
+| name | string | The name of the game |
+| releaseDate | date | The date the game was released |
+| players | int | The number of players that can play the game |
+| developer | integer | The company that developed the game |
+| publisher | integer | The company that published the game |
+| region | integer | the region the game was released |
+
+<br/>
+
+## Table **region**
+The **region** table contains the list of regions that were targets for NES games.
+
+| Field | Data Type | Description |
+|---|---|---|
+| id | integer | Auto-generated ID for the region |
+| name | string | Region name |
+
+<br/><br/>
+
+## Table **developer**
+The **deveoper** table contains the list of developers that created the NES games.
+
+| Field | Data Type | Description |
+|---|---|---|
+| id | integer | Auto-generated ID |
+| name | string | Developer name |
+
+<br/><br/>
+
+## Table **publisher**
+The **publisher** table contains the list of publishers that were allowed to publish NES games.
+
+| Field | Data Type | Description |
+|---|---|---|
+| id | integer | Auto-generated ID |
+| name | string | Publisher name |
+
+<br/><br/>
+
 
 ## Where did the data come from?
 Many data sources were used to build the information.
