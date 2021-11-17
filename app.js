@@ -1,6 +1,6 @@
 const Promise = require('bluebird')
-const AppDAO = require('./dao')
-const CatalogRepository = require('./catalog_repository')
+const AppDAO = require('./controllers/dao')
+const CatalogRepository = require('./controllers/catalog_repository')
 const express = require('express');
 const cors = require('cors');
 

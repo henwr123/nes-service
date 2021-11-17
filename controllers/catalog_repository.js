@@ -73,10 +73,19 @@ class CatalogRepository {
         return this.dao.get(this.SELECT_STATEMENT + ` WHERE catalog_id = ?`, [id])
     }
 
+    /**
+     * This method fetches everything in the database
+     * @returns Array of results for the entire database
+     */
     getAll() {
         return this.dao.all(this.SELECT_STATEMENT)
     }
 
+    /**
+     * 
+     * @param {*} query Filtering criteria in the embedded format - (?field=criteria) as well as sorting criteria
+     * @returns 
+     */
     getFiltered(query) {
 
         let query1 = this.SELECT_STATEMENT + buildFilteringWhereClause(query) + buildSortingOrderBy(query, "title")
