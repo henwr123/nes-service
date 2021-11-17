@@ -1,6 +1,7 @@
 const Promise = require('bluebird')
 const AppDAO = require('./controllers/dao')
 const CatalogRepository = require('./controllers/catalog_repository')
+const PublisherRepository = require('./controllers/publisher_repository')
 const express = require('express');
 const cors = require('cors');
 
@@ -12,6 +13,7 @@ app.use(cors());
 
 const dao = new AppDAO('./games.db')
 const catalogRepo = new CatalogRepository(dao)
+const publishersRepo = new PublisherRepository(dao)
 
 
 
@@ -63,6 +65,27 @@ app.get('/games', (req, res) => {
 
         console.error(`❗  Games - Error - ${err.message}`)
         res.status(400).json({ message: `Something went wrong - No games found` }).end()
+
+    })
+});
+
+
+
+app.get('/publishers', (req, res) => {
+
+    publishersRepo.getFiltered(req.query).then((cat) => {
+
+        console.log(`✔️  Publishers - Found ${cat.length} records`)
+
+        res.status(200).json({
+            count: cat.length,
+            results: cat
+        }).end()
+
+    }).catch((err) => {
+
+        console.error(`❗  Publishers - Error - ${err.message}`)
+        res.status(400).json({ message: `Something went wrong - No publishers found` }).end()
 
     })
 });
