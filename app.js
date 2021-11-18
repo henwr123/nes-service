@@ -1,3 +1,10 @@
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+
 const AppDAO = require('./controllers/dao')
 const CatalogRepository = require('./controllers/catalog_repository')
 const PublisherRepository = require('./controllers/publisher_repository')
@@ -7,11 +14,6 @@ const SystemRepository = require('./controllers/system_repository')
 const CategoryRepository = require('./controllers/category_repository')
 const BoardRepository = require('./controllers/board_repository')
 
-const express = require('express');
-const cors = require('cors');
-
-const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(cors());
 
