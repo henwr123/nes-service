@@ -24,10 +24,6 @@ class Repository {
             sort = " ORDER BY " + def
         }
 
-        // do not apply the order direction if a sorting property was not applied
-        if (params.orderDir !== undefined && params.orderBy !== undefined) {
-            sort = sort + " " + params.orderDir
-        }
         return sort
     }
 
@@ -46,7 +42,7 @@ class Repository {
             let value = entry[1];
 
             // ignore the orderBy parameter
-            if (key === 'orderBy' || key === 'orderDir') {
+            if (key === 'orderBy') {
                 return
             }
 
