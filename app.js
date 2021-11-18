@@ -52,30 +52,38 @@ app.get('/games/:catalog_id', (req, res) => {
  */
 app.get('/games', (req, res) => {
 
-    catalogRepo.getFiltered(req.query).then((cat) => {
+    callGetFiltered(catalogRepo, "Games", req, res)
 
-        console.log(`✔️  Games - Found ${cat.length} records`)
-
-        res.status(200).json({
-            count: cat.length,
-            results: cat
-        }).end()
-
-    }).catch((err) => {
-
-        console.error(`❗  Games - Error - ${err.message}`)
-        res.status(400).json({ message: `Something went wrong - No games found` }).end()
-
-    })
 });
 
 
 
 app.get('/publishers', (req, res) => {
 
-    publishersRepo.getFiltered(req.query).then((cat) => {
+    callGetFiltered(publishersRepo, "Publishers", req, res)
 
-        console.log(`✔️  Publishers - Found ${cat.length} records`)
+});
+
+app.listen(port, () => {
+    console.log(`Welcome to the NES Service - service is listening on port ${port}!`);
+});
+
+
+
+
+/**
+ * This method will encapsulate the process for calling to get a filtered
+ * list of DB objects
+ * @param {*} repo Repository object with a getFiltered method
+ * @param {string} name Name of the DB object for the logging
+ * @param {*} req Request object
+ * @param {*} res Response object
+ */
+function callGetFiltered(repo, name, req, res) {
+
+    repo.getFiltered(req.query).then((cat) => {
+
+        console.log(`✔️  ${name} - Found ${cat.length} records`)
 
         res.status(200).json({
             count: cat.length,
@@ -84,12 +92,8 @@ app.get('/publishers', (req, res) => {
 
     }).catch((err) => {
 
-        console.error(`❗  Publishers - Error - ${err.message}`)
-        res.status(400).json({ message: `Something went wrong - No publishers found` }).end()
+        console.error(`❗  ${name} - Error - ${err.message}`)
+        res.status(400).json({ message: `Something went wrong - No ${name} found` }).end()
 
     })
-});
-
-app.listen(port, () => {
-    console.log(`Welcome to the NES Service - service is listening on port ${port}!`);
-});
+}
