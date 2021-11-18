@@ -14,7 +14,7 @@ class Repository {
      * @param {*} def 
      * @returns 
      */
-    buildSortingOrderBy(params, def = 'publisher_id') {
+    buildSortingOrderBy(params, def = 'name') {
 
         let sort = ""
 
@@ -61,11 +61,33 @@ class Repository {
     }
 
     /**
+     * This method will fetch a single record from the database for the provide
+     * catalog id.
+     * @param {String} id Id for the record to select
+     * @returns result from the catalog selection - one record for the catalog entry
+     */
+    getById(id) {
+        return this.dao.get(this.SELECT_STATEMENT + ` WHERE ${this.PRIMARY_KEY} = ?`, [id])
+    }
+
+    /**
      * This method fetches everything in the database
      * @returns Array of results for the entire database
      */
     getAll() {
         return this.dao.all(this.SELECT_STATEMENT)
+    }
+
+    /**
+     * 
+     * @param {*} query Filtering criteria in the embedded format - (?field=criteria) as well as sorting criteria
+     * @returns 
+     */
+    getFiltered(query) {
+
+        let query1 = this.SELECT_STATEMENT + this.buildFilteringWhereClause(query) + this.buildSortingOrderBy(query, this.DEFAULT_SORT)
+
+        return this.dao.all(query1)
     }
 }
 
