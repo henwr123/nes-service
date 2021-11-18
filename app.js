@@ -1,8 +1,9 @@
-const Promise = require('bluebird')
 const AppDAO = require('./controllers/dao')
 const CatalogRepository = require('./controllers/catalog_repository')
 const PublisherRepository = require('./controllers/publisher_repository')
 const DeveloperRepository = require('./controllers/developer_repository')
+const RegionRepository = require('./controllers/region_repository')
+
 const express = require('express');
 const cors = require('cors');
 
@@ -13,10 +14,11 @@ app.use(cors());
 
 
 const dao = new AppDAO('./games.db')
+
 const catalogRepo = new CatalogRepository(dao)
 const publishersRepo = new PublisherRepository(dao)
 const developersRepo = new DeveloperRepository(dao)
-
+const regionsRepo = new RegionRepository(dao)
 
 
 /**
@@ -53,23 +55,22 @@ app.get('/games/:catalog_id', (req, res) => {
  * Get list of games with filtering
  */
 app.get('/games', (req, res) => {
-
     callGetFiltered(catalogRepo, "Games", req, res)
-
 });
 
 
 app.get('/publishers', (req, res) => {
-
     callGetFiltered(publishersRepo, "Publishers", req, res)
-
 });
 
 
 app.get('/developers', (req, res) => {
-
     callGetFiltered(developersRepo, "Developers", req, res)
+});
 
+
+app.get('/regions', (req, res) => {
+    callGetFiltered(regionsRepo, "Regions", req, res)
 });
 
 app.listen(port, () => {

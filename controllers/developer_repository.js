@@ -1,6 +1,4 @@
-
 const Repository = require('./repository')
-
 
 class DeveloperRepository extends Repository {
 
