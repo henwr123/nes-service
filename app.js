@@ -3,6 +3,7 @@ const CatalogRepository = require('./controllers/catalog_repository')
 const PublisherRepository = require('./controllers/publisher_repository')
 const DeveloperRepository = require('./controllers/developer_repository')
 const RegionRepository = require('./controllers/region_repository')
+const SystemRepository = require('./controllers/system_repository')
 
 const express = require('express');
 const cors = require('cors');
@@ -19,6 +20,7 @@ const catalogRepo = new CatalogRepository(dao)
 const publishersRepo = new PublisherRepository(dao)
 const developersRepo = new DeveloperRepository(dao)
 const regionsRepo = new RegionRepository(dao)
+const systemsRepo = new SystemRepository(dao)
 
 
 /**
@@ -72,6 +74,13 @@ app.get('/developers', (req, res) => {
 app.get('/regions', (req, res) => {
     callGetFiltered(regionsRepo, "Regions", req, res)
 });
+
+
+app.get('/systems', (req, res) => {
+    callGetFiltered(systemsRepo, "Systems", req, res)
+});
+
+
 
 app.listen(port, () => {
     console.log(`Welcome to the NES Service - service is listening on port ${port}!`);
