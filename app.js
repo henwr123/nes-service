@@ -4,6 +4,7 @@ const PublisherRepository = require('./controllers/publisher_repository')
 const DeveloperRepository = require('./controllers/developer_repository')
 const RegionRepository = require('./controllers/region_repository')
 const SystemRepository = require('./controllers/system_repository')
+const CategoryRepository = require('./controllers/category_repository')
 
 const express = require('express');
 const cors = require('cors');
@@ -21,6 +22,7 @@ const publishersRepo = new PublisherRepository(dao)
 const developersRepo = new DeveloperRepository(dao)
 const regionsRepo = new RegionRepository(dao)
 const systemsRepo = new SystemRepository(dao)
+const categoriesRepo = new CategoryRepository(dao)
 
 
 /**
@@ -78,6 +80,11 @@ app.get('/regions', (req, res) => {
 
 app.get('/systems', (req, res) => {
     callGetFiltered(systemsRepo, "Systems", req, res)
+});
+
+
+app.get('/categories', (req, res) => {
+    callGetFiltered(categoriesRepo, "Categories", req, res)
 });
 
 
