@@ -23,13 +23,13 @@ class PublisherRepository extends Repository {
         return this.dao.get(this.SELECT_STATEMENT + ` WHERE name = ?`, [id])
     }
 
-    /**
-     * This method fetches everything in the database
-     * @returns Array of results for the entire database
-     */
-    getAll() {
-        return this.dao.all(this.SELECT_STATEMENT)
-    }
+    // /**
+    //  * This method fetches everything in the database
+    //  * @returns Array of results for the entire database
+    //  */
+    // getAll() {
+    //     return this.dao.all(this.SELECT_STATEMENT)
+    // }
 
     /**
      * 

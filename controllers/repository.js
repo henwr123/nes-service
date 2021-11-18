@@ -59,6 +59,14 @@ class Repository {
 
         return filter
     }
+
+    /**
+     * This method fetches everything in the database
+     * @returns Array of results for the entire database
+     */
+    getAll() {
+        return this.dao.all(this.SELECT_STATEMENT)
+    }
 }
 
 module.exports = Repository;
