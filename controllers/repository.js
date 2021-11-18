@@ -1,7 +1,7 @@
 class Repository {
 
     /**
-     * Create an instance of the Publisher Repository object for DB access
+     * Create an instance of the Repository object for DB access
      * @param {*} dao 
      */
     constructor(dao) {

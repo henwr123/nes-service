@@ -118,7 +118,7 @@ function callGetFiltered(repo, name, req, res) {
     }).catch((err) => {
 
         console.error(`❗  ${name} - Error - ${err.message}`)
-        res.status(400).json({ message: `Something went wrong - No ${name} found` }).end()
+        res.status(400).json({ message: `Something went wrong - No ${name.toLowerCase()} found` }).end()
 
     })
 }
