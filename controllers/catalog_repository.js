@@ -8,7 +8,7 @@ class CatalogRepository extends Repository {
      */
     constructor(dao) {
         super(dao)
-        this.SELECT_STATEMENT = `SELECT * FROM cartdb`
+        this.SELECT_STATEMENT = `SELECT * FROM games`
         this.PRIMARY_KEY = `catalog_id`
         this.DEFAULT_SORT = `title`
     }

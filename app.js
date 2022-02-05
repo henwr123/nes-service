@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const colors = require('colors')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -97,7 +98,7 @@ app.get('/boards', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Welcome to the NES Service - service is listening on port ${port}!`);
+    console.log(`Welcome to the NES Service - service is listening on port ${port}!`.blue.bold.underline);
 });
 
 
@@ -115,7 +116,7 @@ function callGetFiltered(repo, name, req, res) {
 
     repo.getFiltered(req.query).then((cat) => {
 
-        console.log(`✔️  ${name} - Found ${cat.length} records`)
+        console.log(`✔️  ${name} - Found ${cat.length} records`.brightCyan)
 
         res.status(200).json({
             count: cat.length,
@@ -124,7 +125,7 @@ function callGetFiltered(repo, name, req, res) {
 
     }).catch((err) => {
 
-        console.error(`❗  ${name} - Error - ${err.message}`)
+        console.error(`❗  ${name} - Error - ${err.message}`.brightRed)
         res.status(400).json({ message: `Something went wrong - No ${name.toLowerCase()} found` }).end()
 
     })
@@ -145,7 +146,7 @@ function callGetById(repo, name, id, res) {
 
         //No results from the selection
         if (cat === undefined) {
-            console.error(`❌  ${name} - Nothing found for id ${params}`)
+            console.error(`❌  ${name} - Nothing found for id ${params}`.brightCyan)
             res.status(404).json({ message: `${name} - nothing found for id ${params}` }).end()
             return
         }
