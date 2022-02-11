@@ -5,7 +5,7 @@ const colors = require('colors')
 const app = express();
 const port = process.env.PORT || 3000;
 
-
+// load the controllers for the data access
 const AppDAO = require('./controllers/dao')
 const CatalogRepository = require('./controllers/catalog_repository')
 const PublisherRepository = require('./controllers/publisher_repository')
@@ -21,6 +21,7 @@ app.use(cors());
 
 const dao = new AppDAO('./games.db')
 
+// create the repositories for accessing data
 const catalogRepo = new CatalogRepository(dao)
 const publishersRepo = new PublisherRepository(dao)
 const developersRepo = new DeveloperRepository(dao)
