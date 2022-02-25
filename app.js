@@ -117,7 +117,7 @@ function callGetFiltered(repo, name, req, res) {
 
     repo.getFiltered(req.query).then((cat) => {
 
-        console.log(`✔️  ${name} - Found ${cat.length} records`.brightCyan)
+        console.log(`✅  ${name} - Found ${cat.length} records`.brightCyan)
 
         res.status(200).json({
             count: cat.length,
@@ -152,7 +152,7 @@ function callGetById(repo, name, id, res) {
             return
         }
 
-        console.log(`✔️  ${name} - Found ${name.toLowerCase()} with id ${params}`)
+        console.log(`✅ ${name} - Found ${name.toLowerCase()} with id ${params}`)
         res.status(200).json(cat).end()
 
     }).catch((err) => {
