@@ -19,7 +19,7 @@ const BoardRepository = require('./controllers/board_repository')
 app.use(cors());
 
 
-const dao = new AppDAO('./games.db')
+const dao = new AppDAO('./data/games.sqlite')
 
 // create the repositories for accessing data
 const catalogRepo = new CatalogRepository(dao)
