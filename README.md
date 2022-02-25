@@ -26,18 +26,26 @@ Returns the game that has the provided identifier.
 ## Data Source
 Data are stored in a SQLite database.
 
-## Table **catalog**
-The **catalog** table contains the list of NES games along with the information that is important about the game.  
+## Table **games**
+The **games** table contains the list of NES games along with the information that is important about the game.  
 
 | Field | Data Type | Description |
 |---|---|---|
-| id | string | Game identifier - The id is the identifier that Nintendo gave to a licensed game and is promenently displayed on the sticker of the cataridge, otherwise a unique identifier that is generated |
+| catalog_id | string | Game identifier - The id is the identifier that Nintendo gave to a licensed game and is promenently displayed on the sticker of the cataridge, otherwise a unique identifier that is generated |
+| class | string | Indicates Licensed or Unlicensed game |
 | name | string | The name of the game |
+| system | string | System for the game |
+| region | integer | the region the game was released |
+| publisher | integer | The company that published the game |
+| developer | integer | The company that developed the game |
 | releaseDate | date | The date the game was released |
 | players | int | The number of players that can play the game |
-| developer | integer | The company that developed the game |
-| publisher | integer | The company that published the game |
-| region | integer | the region the game was released |
+| board | string | PCB board used for cartridge |
+| upc | string | UPC code for game |
+| category | string | Category for the game |
+| esrb | string | Rating for game |
+
+
 
 <br/>
 
