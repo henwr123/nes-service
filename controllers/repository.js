@@ -63,7 +63,7 @@ class Repository {
      * @returns result from the catalog selection - one record for the catalog entry
      */
     getById(id) {
-        return this.dao.get(this.SELECT_STATEMENT + ` WHERE ${this.PRIMARY_KEY} = ?`, [id])
+        return this.dao.get(this.SELECT_STATEMENT + ` WHERE ${this.PRIMARY_KEY} = ?`, id)
     }
 
     /**

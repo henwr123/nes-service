@@ -6,6 +6,8 @@ describe("Testing the API", () => {
 
     const baseUrl = 'http://localhost:4321'
 
+    /// Systems ///////////////////////////////////////////////////////////////
+
     const systemId = 'NES-NTSC'
 
     it("should be able to get list of systems", (done) => {
@@ -16,6 +18,7 @@ describe("Testing the API", () => {
             .end((err, res) => {
                 expect(res.statusCode).to.be.equal(200)
                 expect(res.body.count).to.be.equal(5)
+                expect(res.body.results[0].name).to.be.equal('Famicom')
                 if(err) {
                     throw err
                 }
