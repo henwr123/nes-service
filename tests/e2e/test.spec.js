@@ -103,8 +103,7 @@ describe("Testing the nes-service API - Get Data", () => {
  * @returns capitalized string
  */
  function capitalize(s) {
-    if (typeof s !== 'string') return ''
-    return s.charAt(0).toUpperCase() + s.slice(1)
+    return (typeof s === 'string') ? s.charAt(0).toUpperCase() + s.slice(1) : ''
 }
 
 /**
