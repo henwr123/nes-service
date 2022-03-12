@@ -1,56 +1,99 @@
 const request = require("supertest")
 const expect = require("chai").expect
-const assert = require('chai').assert
 
 const baseUrl = 'http://localhost:4321'
 
-let id = ''
-let entity = ''
-let property = ''
-let firstItem = ''
-let lastItem = ''
+// test setups
+const test_setup = [
+    {
+        entity: 'systems',
+        property: 'name',
+        fullListSize: 5,
+        id: 'NES-NTSC',
+        firstItem: 'Famicom',
+        lastItem: 'NES-PAL-B',
+        pattern: 'pAl',
+        patternMatchSize: 3
+    },
+    {
+        entity: 'boards',
+        property: 'name',
+        fullListSize: 67,
+        id: 'HVC-CNROM',
+        firstItem: 'ACCLAIM-AOROM',
+        lastItem: 'VIRGIN-SNROM',
+        pattern: 'An',
+        patternMatchSize: 2
+    },
+    {
+        entity: 'regions',
+        property: 'name',
+        fullListSize: 15,
+        id: 'Brazil',
+        firstItem: 'Australia',
+        lastItem: 'United Kingdom',
+        pattern: 'An',
+        patternMatchSize: 7
+    },
+    {
+        entity: 'publishers',
+        property: 'name',
+        fullListSize: 149,
+        id: 'Brøderbund',
+        firstItem: 'A Wave',
+        lastItem: 'dB-SOFT',
+        pattern: 'SoFtWaRe',
+        patternMatchSize: 4
+    },
+    {
+        entity: 'developers',
+        property: 'name',
+        fullListSize: 229,
+        id: 'Brøderbund',
+        firstItem: 'A.I',
+        lastItem: 'dB-SOFT',
+        pattern: 'SoFtWaRe',
+        patternMatchSize: 15
+    },
+    {
+        entity: 'categories',
+        property: 'name',
+        fullListSize: 15,
+        id: 'Programmable',
+        firstItem: 'Action & Adventure',
+        lastItem: 'Strategy',
+        pattern: 'eR',
+        patternMatchSize: 2
+    },
+    {
+        entity: 'games',
+        property: 'title',
+        fullListSize: 2388,
+        key: 'catalog_id',
+        id: 'NES-MT-USA',
+        firstItem: 1942,
+        lastItem: 'Zunou Senkan Galg',
+        pattern: 'mArIo',
+        patternMatchSize: 42
+    }
+]
 
+// Execute the tests
 describe("Testing the nes-service API - Get Data", () => {
 
-    /// Systems ///////////////////////////////////////////////////////////////
+    test_setup.forEach((test, index) => {
 
-    id = 'NES-NTSC'
-    entity = 'systems'
-    property = 'name'
-    firstItem = 'Famicom'
-    lastItem = 'NES-PAL-B'
+        context(`${++index}. ${capitalize(test.entity)} Tests`, () => {
 
-    context('System Tests', () => {
+            runTestList(test.entity, test.fullListSize, test.property, test.firstItem)
+            runTestGetItem(test.entity, test.id, test.hasOwnProperty('key') ? test.key : test.property)
+            runTestFilterByValue(test.entity, test.id, test.hasOwnProperty('key') ? test.key : test.property)
+            runTestFilterByPattern(test.entity, test.pattern, test.property, test.patternMatchSize)
+            runTestSorting(test.entity, test.property, 'desc', test.lastItem)
+            runTestSorting(test.entity, test.property, 'asc', test.firstItem)
 
-        runTestList(entity, 5, property, firstItem)
-        runTestGetItem(entity, id, property)
-        runTestFilterByValue(entity, id, property)
-        runTestFilterByPattern(entity, 'pAl', property, 3)
-        runTestSorting(entity, 'name', 'desc', lastItem)
-        runTestSorting(entity, 'name', 'asc', firstItem)
-
+        })
     })
-
-
-    /// Boards ///////////////////////////////////////////////////////////////
-
-    id = 'HVC-CNROM'
-    entity = 'boards'
-    property = 'name'
-    firstItem = 'ACCLAIM-AOROM'
-    lastItem = 'VIRGIN-SNROM'
-
-    context('Board Tests', () => {
-
-        runTestList(entity, 67, property, firstItem)
-        runTestGetItem(entity, id, property)
-        runTestFilterByValue(entity, id, property)
-        runTestFilterByPattern(entity, 'An', property, 2)
-        runTestSorting(entity, 'name', 'desc', lastItem)
-        runTestSorting(entity, 'name', 'asc', firstItem)
-
-    })
-
 })
 
 
@@ -62,7 +105,7 @@ describe("Testing the nes-service API - Get Data", () => {
  function capitalize(s) {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
-  }
+}
 
 /**
  * 
@@ -73,7 +116,7 @@ describe("Testing the nes-service API - Get Data", () => {
  */
 function runTestList(entity, listCount, property, listFirstItem) {
 
-    it(`${capitalize(entity)} - should be able to get list`, (done) => {
+    it(`${capitalize(entity)} - should be able to get list of ${listCount} items`, (done) => {
         request(baseUrl)
             .get('/' + entity)
             .set('Accept', 'application/json')
@@ -98,7 +141,7 @@ function runTestList(entity, listCount, property, listFirstItem) {
  */
 function runTestGetItem(entity, id, property) {
 
-    it(`${capitalize(entity)} - should be able to get an item`, (done) => {
+    it(`${capitalize(entity)} - should be able to get an item value '${id}' for property '${property}'`, (done) => {
         request(baseUrl)
             .get('/' + entity + '/' + id)
             .set('Accept', 'application/json')
@@ -112,7 +155,6 @@ function runTestGetItem(entity, id, property) {
                 done()
             })
     })
-
 }
 
 /**
@@ -123,7 +165,7 @@ function runTestGetItem(entity, id, property) {
  */
 function runTestFilterByValue(entity, id, property) {
 
-    it(`${capitalize(entity)} - should be able to filter by value`, (done) => {
+    it(`${capitalize(entity)} - should be able to filter by value '${id}' for property '${property}'`, (done) => {
         request(baseUrl)
             .get('/' + entity +  '/?' + property + '=' + id)
             .set('Accept', 'application/json')
@@ -138,7 +180,6 @@ function runTestFilterByValue(entity, id, property) {
                 done()
             })
     })
-
 }
 
 /**
@@ -153,7 +194,7 @@ function runTestFilterByPattern(entity, pattern, property, matches) {
     const searchPattern = `%${pattern}%`
     const patternRegExp = RegExp(pattern, 'i')
 
-    it(`${capitalize(entity)} - should be able to filter by pattern`, (done) => {
+    it(`${capitalize(entity)} - should be able to filter by pattern '${pattern}' and find ${matches} records`, (done) => {
         request(baseUrl)
         .get('/' + entity +  '/?' + property + '=' + searchPattern)
             .set('Accept', 'application/json')
@@ -162,7 +203,7 @@ function runTestFilterByPattern(entity, pattern, property, matches) {
                 expect(res.statusCode).to.be.equal(200)
                 expect(res.body.count).to.be.equal(matches)
                 res.body.results.forEach(game => {
-                    expect(game.name).to.match(patternRegExp)
+                    expect(game[property]).to.match(patternRegExp)
                 })
                 if(err) {
                     throw err
@@ -170,7 +211,6 @@ function runTestFilterByPattern(entity, pattern, property, matches) {
                 done()
             })
     })
-
 }
 
 /**
@@ -182,19 +222,18 @@ function runTestFilterByPattern(entity, pattern, property, matches) {
  */
 function runTestSorting(entity, sortProperty, direction, listFirstItem) {
 
-    it(`${capitalize(entity)} - should be able to sort ${direction}`, (done) => {
+    it(`${capitalize(entity)} - should be able to sort ${direction} on property '${sortProperty}'`, (done) => {
         request(baseUrl)
             .get('/' + entity + '?orderBy=' + sortProperty + ' ' + direction)
             .set('Accept', 'application/json')
             .set('Content-Type', 'application/json')
             .end((err, res) => {
                 expect(res.statusCode).to.be.equal(200)
-                expect(res.body.results[0][property]).to.be.equal(listFirstItem)
+                expect(res.body.results[0][sortProperty]).to.be.equal(listFirstItem)
                 if(err) {
                     throw err
                 }
                 done()
             })
     })
-
 }
