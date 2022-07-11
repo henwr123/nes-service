@@ -117,7 +117,7 @@ function callGetFiltered(repo, name, req, res) {
 
     repo.getFiltered(req.query).then((cat) => {
 
-        console.log(`✅ ${name} - Found ${cat.length} records`.brightCyan)
+        console.log(`✅ ${name} - Found ${cat.length} records`.black)
 
         res.status(200).json({
             count: cat.length,
