@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: nes-service-node-server
+    command: npm run start-mon
+    ports:
+      - 4321:4321
+    volumes:
+      - .:/app
