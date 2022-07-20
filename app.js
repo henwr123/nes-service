@@ -3,7 +3,7 @@ const cors = require('cors');
 const colors = require('colors')
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4321;
 
 // load the controllers for the data access
 const AppDAO = require('./controllers/dao')

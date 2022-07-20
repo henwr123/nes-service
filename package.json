@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "start-mon": "nodemon server.js",
+    "start-mon": "nodemon app.js",
+    "dev": "nodemon app.js",
+    "docker:dev": "docker-compose up",
     "test": "mocha **/*.spec.js && mocha --reporter json > reports/test-results.json"
   },
   "repository": {
