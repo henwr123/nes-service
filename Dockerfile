@@ -4,7 +4,7 @@ FROM node:12
 ENV PORT=4321
 
 # Set working directory. Paths will be relative this WORKDIR.
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
@@ -20,4 +20,4 @@ RUN npm install
 EXPOSE ${PORT}
 
 # Run the app
-CMD [ "npm", "start" ]
+CMD [ "node", "start" ]

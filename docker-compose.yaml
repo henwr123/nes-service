@@ -1,0 +1,21 @@
+services:
+  app:
+    image: app
+    build: .
+    environment:
+      NODE_ENV: development
+    container_name: nes-service-node-server
+    command: npm run dev
+    ports:
+      - 4321:4321
+    volumes:
+      - .:/app
+      - /app/node_modules
+  
+  #app-test:
+  #  image: app
+  #  command: npm run test
+  #  environment:
+  #    APP_URL: http://localhost:4321
+  #  depends_on:
+  #    - app
