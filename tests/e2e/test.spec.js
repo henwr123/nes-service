@@ -1,7 +1,7 @@
 const request = require("supertest")
 const expect = require("chai").expect
 
-const baseUrl = 'http://localhost:4321'
+const baseUrl = process.env.APP_URL || 'http://localhost:4321'
 
 // test setups
 const test_setup = [
