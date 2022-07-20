@@ -33,7 +33,7 @@ const boardsRepo = new BoardRepository(dao)
 
 /// GAMES /////////////////////////////////////////////////////////////////////
 app.get('/games/:catalog_id', (req, res) => {
-    callGetById(catalogRepo, "Games", req.params.catalog_id, res)
+    callGetById(catalogRepo, "Games", req.params.catalog_id, req, res)
 });
 
 app.get('/games', (req, res) => {
@@ -42,7 +42,7 @@ app.get('/games', (req, res) => {
 
 /// PUBLISHERS ////////////////////////////////////////////////////////////////
 app.get('/publishers/:name', (req, res) => {
-    callGetById(publishersRepo, "Publisher", req.params.name, res)
+    callGetById(publishersRepo, "Publisher", req.params.name, req, res)
 });
 
 app.get('/publishers', (req, res) => {
@@ -51,7 +51,7 @@ app.get('/publishers', (req, res) => {
 
 /// DEVELOPERS ////////////////////////////////////////////////////////////////
 app.get('/developers/:name', (req, res) => {
-    callGetById(developersRepo, "Developer", req.params.name, res)
+    callGetById(developersRepo, "Developer", req.params.name, req, res)
 });
 
 app.get('/developers', (req, res) => {
@@ -60,7 +60,7 @@ app.get('/developers', (req, res) => {
 
 /// REGIONS ///////////////////////////////////////////////////////////////////
 app.get('/regions/:name', (req, res) => {
-    callGetById(regionsRepo, "Region", req.params.name, res)
+    callGetById(regionsRepo, "Region", req.params.name, req, res)
 });
 
 app.get('/regions', (req, res) => {
@@ -69,7 +69,7 @@ app.get('/regions', (req, res) => {
 
 /// SYSTEMS ///////////////////////////////////////////////////////////////////
 app.get('/systems/:name', (req, res) => {
-    callGetById(systemsRepo, "System", req.params.name, res)
+    callGetById(systemsRepo, "System", req.params.name, req, res)
 });
 
 app.get('/systems', (req, res) => {
@@ -78,7 +78,7 @@ app.get('/systems', (req, res) => {
 
 /// CATEGORIES ////////////////////////////////////////////////////////////////
 app.get('/categories/:name', (req, res) => {
-    callGetById(categoriesRepo, "Category", req.params.name, res)
+    callGetById(categoriesRepo, "Category", req.params.name, req, res)
 });
 
 app.get('/categories', (req, res) => {
@@ -87,7 +87,7 @@ app.get('/categories', (req, res) => {
 
 /// BOARDS ////////////////////////////////////////////////////////////////////
 app.get('/boards/:name', (req, res) => {
-    callGetById(boardsRepo, "Board", req.params.name, res)
+    callGetById(boardsRepo, "Board", req.params.name, req, res)
 });
 
 app.get('/boards', (req, res) => {
@@ -114,10 +114,14 @@ app.listen(port, () => {
  * @param {*} res Response object
  */
 function callGetFiltered(repo, name, req, res) {
+    
+    // source: https://stackfame.com/get-ip-address-node
+    var ip = req.header('x-forwarded-for') || req.connection.remoteAddress
 
     repo.getFiltered(req.query).then((cat) => {
 
         console.log(`✅ ${name} - Found ${cat.length} records`.black)
+        console.log(`🔎 IP Address ${ip}`)
 
         res.status(200).json({
             count: cat.length,
@@ -127,6 +131,7 @@ function callGetFiltered(repo, name, req, res) {
     }).catch((err) => {
 
         console.error(`❗ ${name} - Error - ${err.message}`.brightRed)
+        console.log(`🔎 IP Address ${ip}`)
         res.status(400).json({ message: `Something went wrong - No ${name.toLowerCase()} found` }).end()
 
     })
@@ -139,25 +144,30 @@ function callGetFiltered(repo, name, req, res) {
  * @param {*} id Primary table key
  * @param {*} res Response object
  */
-function callGetById(repo, name, id, res) {
+function callGetById(repo, name, id, req, res) {
 
     let params = [id]
+
+    // source: https://stackfame.com/get-ip-address-node
+    var ip = req.header('x-forwarded-for') || req.connection.remoteAddress
 
     repo.getById(params).then((cat) => {
 
         //No results from the selection
         if (cat === undefined) {
             console.error(`❌ ${name} - Nothing found for id ${params}`.brightCyan)
+            console.log(`🔎 IP Address ${ip}`)
             res.status(404).json({ message: `${name} - nothing found for id ${params}` }).end()
             return
         }
 
-        console.log(`✅ ${name} - Found ${name.toLowerCase()} with id ${params}`)
+        console.log(`✅ ${name} - Found ${name.toLowerCase()} with id ${params} - [${ip}]`)
         res.status(200).json(cat).end()
 
     }).catch((err) => {
 
         console.log(`❌ ${name} - Nothing found for id ${params}`)
+        console.log(`🔎 IP Address ${ip}`)
         console.log(JSON.stringify(err))
         res.status(404).json({ message: `${name} - nothing found for id ${params}` }).end()
 
