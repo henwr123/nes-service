@@ -5,6 +5,8 @@ const colors = require('colors')
 const app = express();
 const port = process.env.PORT || 4321;
 
+const LOG_DETAILED = true
+
 // load the controllers for the data access
 const AppDAO = require('./controllers/dao')
 const CatalogRepository = require('./controllers/catalog_repository')
@@ -17,6 +19,8 @@ const BoardRepository = require('./controllers/board_repository')
 
 
 app.use(cors());
+
+app.set('trust proxy', true);
 
 
 const dao = new AppDAO('./data/games.sqlite')
@@ -120,8 +124,7 @@ function callGetFiltered(repo, name, req, res) {
 
     repo.getFiltered(req.query).then((cat) => {
 
-        console.log(`✅ ${name} - Found ${cat.length} records`.black)
-        console.log(`🔎 IP Address ${ip}`)
+        logging_handle(`✅ ${name} - Found ${cat.length} records`.black, req)
 
         res.status(200).json({
             count: cat.length,
@@ -130,8 +133,7 @@ function callGetFiltered(repo, name, req, res) {
 
     }).catch((err) => {
 
-        console.error(`❗ ${name} - Error - ${err.message}`.brightRed)
-        console.log(`🔎 IP Address ${ip}`)
+        logging_handle(`❗ ${name} - Error - ${err.message}`.brightRed, req)
         res.status(400).json({ message: `Something went wrong - No ${name.toLowerCase()} found` }).end()
 
     })
@@ -148,28 +150,46 @@ function callGetById(repo, name, id, req, res) {
 
     let params = [id]
 
-    // source: https://stackfame.com/get-ip-address-node
-    var ip = req.header('x-forwarded-for') || req.connection.remoteAddress
-
     repo.getById(params).then((cat) => {
 
         //No results from the selection
         if (cat === undefined) {
-            console.error(`❌ ${name} - Nothing found for id ${params}`.brightCyan)
-            console.log(`🔎 IP Address ${ip}`)
+            logging_handle(`❌ ${name} - Nothing found for id ${params}`.brightCyan, req)
             res.status(404).json({ message: `${name} - nothing found for id ${params}` }).end()
             return
         }
 
-        console.log(`✅ ${name} - Found ${name.toLowerCase()} with id ${params} - [${ip}]`)
+        logging_handle(`✅ ${name} - Found ${name.toLowerCase()} with id ${params}`, req)
         res.status(200).json(cat).end()
 
     }).catch((err) => {
 
-        console.log(`❌ ${name} - Nothing found for id ${params}`)
-        console.log(`🔎 IP Address ${ip}`)
+        logging_handle(`❌ ${name} - Nothing found for id ${params}`, req)
         console.log(JSON.stringify(err))
         res.status(404).json({ message: `${name} - nothing found for id ${params}` }).end()
 
     })
+}
+
+/**
+ * Manage the messages and will display additional information if the LOG_DETAILED is true
+ * @param {*} message 
+ * @param {*} req 
+ */
+function logging_handle(message, req) {
+
+    console.log(message)
+
+    if(LOG_DETAILED)
+    {
+        // source: https://stackfame.com/get-ip-address-node
+        var ip = req.ip || req.header('x-forwarded-for') || req.connection.remoteAddress
+
+        console.log(`   🔎 IP Address [ ${ip} ]`)
+        console.log(`   🔎 METHOD ${req.method}`)
+        console.log(`   🔎 Path ${req.path}`)
+        console.log(`   🔎 Agent ${req.get('User-Agent')}`)
+
+    }
+
 }

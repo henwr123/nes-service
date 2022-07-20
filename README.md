@@ -136,3 +136,12 @@ Data are imported into a spreadsheet to combine data and to make adjustments.  O
 ## What about images?
 
 Box art images can be downloaded from http://www.ubernes.com/nesboxart.html.  The names must be mapped to the Catalog ID and will need to be hosted elsewhere.  To access the resource, the application will provide the base URI with the Catalog ID.
+
+
+## Sources
+
+Used this to get Docker local environment setup:
+https://towardsdev.com/docker-for-local-node-js-development-164844df5cb6
+
+Used this to determine the IP address for the calling application:
+https://stackfame.com/get-ip-address-node
