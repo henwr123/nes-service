@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express')
 const cors = require('cors');
 const colors = require('colors')
 
@@ -21,6 +21,7 @@ const BoardRepository = require('./controllers/board_repository')
 app.use(cors());
 
 app.set('trust proxy', true);
+
 
 
 const dao = new AppDAO('./data/games.sqlite')
@@ -186,9 +187,9 @@ function logging_handle(message, req) {
         var ip = req.ip || req.header('x-forwarded-for') || req.connection.remoteAddress
 
         console.log(`   🔎 IP Address [ ${ip} ]`)
-        console.log(`   🔎 METHOD ${req.method}`)
-        console.log(`   🔎 Path ${req.path}`)
-        console.log(`   🔎 Agent ${req.get('User-Agent')}`)
+        console.log(`   🔎 HTTP Method ${req.method}`)
+        console.log(`   🔎 Path "${req.path}"`)
+        console.log(`   🔎 User Agent "${req.get('User-Agent')}"`)
 
     }
 
