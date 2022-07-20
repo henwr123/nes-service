@@ -9,9 +9,14 @@ To run the project locally, clone the repo, open the directory
 
 * Install dependencies with `npm install`
 * Use `npm start` to start the service
-* Access the end point at `http://localhost:3000`
+* Access the end point at `http://localhost:4321`
 
 <br/>
+
+To run the project locally with Docker, clone the repo, open the directory
+
+* Use `npm run docker:dev` to build the container and start it locally
+* Access the end point at `http://localhost:4321`
 
 # End Points
 
