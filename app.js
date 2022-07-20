@@ -23,6 +23,11 @@ app.use(cors());
 app.set('trust proxy', true);
 
 
+app.all('*', (req, res, next) => {
+    res.set('x-nes-service-message', 'Thanks for using the NES Service')
+    next()
+})
+
 
 const dao = new AppDAO('./data/games.sqlite')
 
@@ -119,9 +124,6 @@ app.listen(port, () => {
  * @param {*} res Response object
  */
 function callGetFiltered(repo, name, req, res) {
-    
-    // source: https://stackfame.com/get-ip-address-node
-    var ip = req.header('x-forwarded-for') || req.connection.remoteAddress
 
     repo.getFiltered(req.query).then((cat) => {
 
@@ -185,11 +187,19 @@ function logging_handle(message, req) {
     {
         // source: https://stackfame.com/get-ip-address-node
         var ip = req.ip || req.header('x-forwarded-for') || req.connection.remoteAddress
+        
+        let n = new Date()
+
+        let options = {
+            timeZone: 'America/Chicago',
+            fractionalSecondDigits: 3
+        }
 
         console.log(`   🔎 IP Address [ ${ip} ]`)
         console.log(`   🔎 HTTP Method ${req.method}`)
         console.log(`   🔎 Path "${req.path}"`)
-        console.log(`   🔎 User Agent "${req.get('User-Agent')}"`)
+        console.log(`   🌮 User Agent "${req.get('User-Agent')}"`)
+        console.log(`   ⏱️ Time => ${n.toLocaleString('en-US', options)} CST`)
 
     }
 
