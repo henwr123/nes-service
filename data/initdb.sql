@@ -1,13 +1,10 @@
---
--- File generated with SQLiteStudio v3.3.3 on Tue Jul 5 22:48:57 2022
---
--- Text encoding used: UTF-8
---
-PRAGMA foreign_keys = off;
-BEGIN TRANSACTION;
+
+
+CREATE TABLE boards (
+    name text PRIMARY KEY NOT NULL
+);
 
 -- Table: boards
-CREATE TABLE boards (name STRING PRIMARY KEY);
 INSERT INTO boards (name) VALUES ('ACCLAIM-AOROM');
 INSERT INTO boards (name) VALUES ('ACCLAIM-MC-ACC');
 INSERT INTO boards (name) VALUES ('ACCLAIM-TLROM');
@@ -75,6 +72,7 @@ INSERT INTO boards (name) VALUES ('NES-TVROM');
 INSERT INTO boards (name) VALUES ('NES-UNROM');
 INSERT INTO boards (name) VALUES ('NES-UOROM');
 INSERT INTO boards (name) VALUES ('VIRGIN-SNROM');
+
 
 -- Table: categories
 CREATE TABLE categories (name TEXT PRIMARY KEY UNIQUE);
@@ -326,8 +324,202 @@ INSERT INTO developers (name) VALUES ('Woodplace');
 INSERT INTO developers (name) VALUES ('Zap');
 INSERT INTO developers (name) VALUES ('Zippo Games');
 
+-- Table: publishers
+CREATE TABLE publishers (name TEXT PRIMARY KEY NOT NULL UNIQUE);
+INSERT INTO publishers (name) VALUES ('A Wave');
+INSERT INTO publishers (name) VALUES ('Absolute');
+INSERT INTO publishers (name) VALUES ('Acclaim');
+INSERT INTO publishers (name) VALUES ('Active Enterprises');
+INSERT INTO publishers (name) VALUES ('Activision');
+INSERT INTO publishers (name) VALUES ('AGCI');
+INSERT INTO publishers (name) VALUES ('Altron');
+INSERT INTO publishers (name) VALUES ('American Softworks');
+INSERT INTO publishers (name) VALUES ('Angel');
+INSERT INTO publishers (name) VALUES ('Arcadia');
+INSERT INTO publishers (name) VALUES ('ASCII');
+INSERT INTO publishers (name) VALUES ('Asmik');
+INSERT INTO publishers (name) VALUES ('Athena');
+INSERT INTO publishers (name) VALUES ('Atlus');
+INSERT INTO publishers (name) VALUES ('AVE');
+INSERT INTO publishers (name) VALUES ('Bandai');
+INSERT INTO publishers (name) VALUES ('Banpresto');
+INSERT INTO publishers (name) VALUES ('Beam Software');
+INSERT INTO publishers (name) VALUES ('Bothtec (Quest)');
+INSERT INTO publishers (name) VALUES ('Brøderbund');
+INSERT INTO publishers (name) VALUES ('Bullet-Proof Software');
+INSERT INTO publishers (name) VALUES ('Bunch Games');
+INSERT INTO publishers (name) VALUES ('Caltron');
+INSERT INTO publishers (name) VALUES ('Camerica');
+INSERT INTO publishers (name) VALUES ('Capcom');
+INSERT INTO publishers (name) VALUES ('CBS / Sony Group');
+INSERT INTO publishers (name) VALUES ('CCE');
+INSERT INTO publishers (name) VALUES ('Character Soft');
+INSERT INTO publishers (name) VALUES ('Coconuts');
+INSERT INTO publishers (name) VALUES ('Codemasters');
+INSERT INTO publishers (name) VALUES ('Color Dreams');
+INSERT INTO publishers (name) VALUES ('Culture Brain');
+INSERT INTO publishers (name) VALUES ('Data East');
+INSERT INTO publishers (name) VALUES ('dB-SOFT');
+INSERT INTO publishers (name) VALUES ('Electro Brain');
+INSERT INTO publishers (name) VALUES ('Electronic Arts');
+INSERT INTO publishers (name) VALUES ('Elite');
+INSERT INTO publishers (name) VALUES ('Enix');
+INSERT INTO publishers (name) VALUES ('Epic / Sony Records');
+INSERT INTO publishers (name) VALUES ('Epoch');
+INSERT INTO publishers (name) VALUES ('Face');
+INSERT INTO publishers (name) VALUES ('FCI');
+INSERT INTO publishers (name) VALUES ('Fuji TV');
+INSERT INTO publishers (name) VALUES ('Gakken');
+INSERT INTO publishers (name) VALUES ('Galoob');
+INSERT INTO publishers (name) VALUES ('GameTek');
+INSERT INTO publishers (name) VALUES ('Gluk Video');
+INSERT INTO publishers (name) VALUES ('GO 1');
+INSERT INTO publishers (name) VALUES ('Gradiente');
+INSERT INTO publishers (name) VALUES ('Gremlin');
+INSERT INTO publishers (name) VALUES ('HAL Laboratory');
+INSERT INTO publishers (name) VALUES ('Hect');
+INSERT INTO publishers (name) VALUES ('HES');
+INSERT INTO publishers (name) VALUES ('Hi Tech Expressions');
+INSERT INTO publishers (name) VALUES ('Hi-Score Software');
+INSERT INTO publishers (name) VALUES ('HOT・B');
+INSERT INTO publishers (name) VALUES ('Hudson Soft');
+INSERT INTO publishers (name) VALUES ('Human Entertainment');
+INSERT INTO publishers (name) VALUES ('IGS');
+INSERT INTO publishers (name) VALUES ('Imagineer');
+INSERT INTO publishers (name) VALUES ('I''Max');
+INSERT INTO publishers (name) VALUES ('Infocom');
+INSERT INTO publishers (name) VALUES ('Infogrames');
+INSERT INTO publishers (name) VALUES ('INTV');
+INSERT INTO publishers (name) VALUES ('Irem');
+INSERT INTO publishers (name) VALUES ('Jaleco');
+INSERT INTO publishers (name) VALUES ('Jingukan');
+INSERT INTO publishers (name) VALUES ('JVC');
+INSERT INTO publishers (name) VALUES ('KAC');
+INSERT INTO publishers (name) VALUES ('Kawada');
+INSERT INTO publishers (name) VALUES ('Kemco');
+INSERT INTO publishers (name) VALUES ('King Records');
+INSERT INTO publishers (name) VALUES ('Koei');
+INSERT INTO publishers (name) VALUES ('Konami');
+INSERT INTO publishers (name) VALUES ('Kyugo Boueki');
+INSERT INTO publishers (name) VALUES ('LJN');
+INSERT INTO publishers (name) VALUES ('Login Soft');
+INSERT INTO publishers (name) VALUES ('Loriciel');
+INSERT INTO publishers (name) VALUES ('M&M');
+INSERT INTO publishers (name) VALUES ('Masaya');
+INSERT INTO publishers (name) VALUES ('Matchbox');
+INSERT INTO publishers (name) VALUES ('Mattel');
+INSERT INTO publishers (name) VALUES ('Meldac');
+INSERT INTO publishers (name) VALUES ('Microprose');
+INSERT INTO publishers (name) VALUES ('Milton Bradley');
+INSERT INTO publishers (name) VALUES ('Mindscape');
+INSERT INTO publishers (name) VALUES ('Namco');
+INSERT INTO publishers (name) VALUES ('Natsume');
+INSERT INTO publishers (name) VALUES ('Nexoft');
+INSERT INTO publishers (name) VALUES ('Nichibutsu');
+INSERT INTO publishers (name) VALUES ('Nintendo');
+INSERT INTO publishers (name) VALUES ('NTVIC');
+INSERT INTO publishers (name) VALUES ('Ocean');
+INSERT INTO publishers (name) VALUES ('Pack-In-Video');
+INSERT INTO publishers (name) VALUES ('Palcom');
+INSERT INTO publishers (name) VALUES ('Panesian');
+INSERT INTO publishers (name) VALUES ('Parker Brothers');
+INSERT INTO publishers (name) VALUES ('Party Room 21');
+INSERT INTO publishers (name) VALUES ('Pixel');
+INSERT INTO publishers (name) VALUES ('Pony Canyon');
+INSERT INTO publishers (name) VALUES ('RacerMate');
+INSERT INTO publishers (name) VALUES ('Rix Soft');
+INSERT INTO publishers (name) VALUES ('Romstar');
+INSERT INTO publishers (name) VALUES ('Sachen / Joy Van');
+INSERT INTO publishers (name) VALUES ('Sammy');
+INSERT INTO publishers (name) VALUES ('Sanritsu');
+INSERT INTO publishers (name) VALUES ('SEI');
+INSERT INTO publishers (name) VALUES ('Seta');
+INSERT INTO publishers (name) VALUES ('Sharp');
+INSERT INTO publishers (name) VALUES ('Shinsei');
+INSERT INTO publishers (name) VALUES ('Sigma Enterprises');
+INSERT INTO publishers (name) VALUES ('SNK');
+INSERT INTO publishers (name) VALUES ('Sofel');
+INSERT INTO publishers (name) VALUES ('Soft Pro');
+INSERT INTO publishers (name) VALUES ('Sony (CSG) Imagesoft');
+INSERT INTO publishers (name) VALUES ('Square');
+INSERT INTO publishers (name) VALUES ('Storm');
+INSERT INTO publishers (name) VALUES ('Sunsoft');
+INSERT INTO publishers (name) VALUES ('Taito');
+INSERT INTO publishers (name) VALUES ('Takara');
+INSERT INTO publishers (name) VALUES ('Taxan');
+INSERT INTO publishers (name) VALUES ('Technos');
+INSERT INTO publishers (name) VALUES ('Tecmo');
+INSERT INTO publishers (name) VALUES ('Tengen');
+INSERT INTO publishers (name) VALUES ('The Software Toolworks');
+INSERT INTO publishers (name) VALUES ('THQ');
+INSERT INTO publishers (name) VALUES ('Titus');
+INSERT INTO publishers (name) VALUES ('Toei Animation');
+INSERT INTO publishers (name) VALUES ('Toemiland');
+INSERT INTO publishers (name) VALUES ('Toho');
+INSERT INTO publishers (name) VALUES ('Tokuma Shoten');
+INSERT INTO publishers (name) VALUES ('Tokyo Shoseki');
+INSERT INTO publishers (name) VALUES ('Tomy');
+INSERT INTO publishers (name) VALUES ('Tonkin House');
+INSERT INTO publishers (name) VALUES ('Towa Chiki');
+INSERT INTO publishers (name) VALUES ('Tradewest');
+INSERT INTO publishers (name) VALUES ('Triffix');
+INSERT INTO publishers (name) VALUES ('TSS');
+INSERT INTO publishers (name) VALUES ('UBI Soft');
+INSERT INTO publishers (name) VALUES ('Ultra Games');
+INSERT INTO publishers (name) VALUES ('Use');
+INSERT INTO publishers (name) VALUES ('Vap');
+INSERT INTO publishers (name) VALUES ('Varie');
+INSERT INTO publishers (name) VALUES ('Vic Tokai');
+INSERT INTO publishers (name) VALUES ('Victor');
+INSERT INTO publishers (name) VALUES ('Virgin Games');
+INSERT INTO publishers (name) VALUES ('Visco');
+INSERT INTO publishers (name) VALUES ('Wisdom Tree');
+INSERT INTO publishers (name) VALUES ('Yutaka');
+
+-- Table: regions
+CREATE TABLE regions (name TEXT PRIMARY KEY UNIQUE);
+INSERT INTO regions (name) VALUES ('Australia');
+INSERT INTO regions (name) VALUES ('Brazil');
+INSERT INTO regions (name) VALUES ('Canada');
+INSERT INTO regions (name) VALUES ('Europe');
+INSERT INTO regions (name) VALUES ('France');
+INSERT INTO regions (name) VALUES ('Germany');
+INSERT INTO regions (name) VALUES ('Italy');
+INSERT INTO regions (name) VALUES ('Japan');
+INSERT INTO regions (name) VALUES ('Netherlands');
+INSERT INTO regions (name) VALUES ('Scandinavia');
+INSERT INTO regions (name) VALUES ('Spain');
+INSERT INTO regions (name) VALUES ('Sweden');
+INSERT INTO regions (name) VALUES ('Taiwan');
+INSERT INTO regions (name) VALUES ('United Kingdom');
+INSERT INTO regions (name) VALUES ('USA');
+
+-- Table: systems
+CREATE TABLE systems (name TEXT PRIMARY KEY UNIQUE);
+INSERT INTO systems (name) VALUES ('Famicom');
+INSERT INTO systems (name) VALUES ('NES-NTSC');
+INSERT INTO systems (name) VALUES ('NES-PAL');
+INSERT INTO systems (name) VALUES ('NES-PAL-A');
+INSERT INTO systems (name) VALUES ('NES-PAL-B');
+
+
 -- Table: games
-CREATE TABLE games (catalog_id STRING PRIMARY KEY NOT NULL, class STRING, title STRING NOT NULL, system STRING REFERENCES systems (name) ON DELETE SET NULL ON UPDATE CASCADE, region STRING REFERENCES regions (name) ON DELETE SET NULL ON UPDATE CASCADE, publisher STRING REFERENCES publishers (name) ON DELETE SET NULL ON UPDATE CASCADE, developer STRING REFERENCES developers (name) ON DELETE SET NULL ON UPDATE CASCADE, date DATE, "release" DATE, players INTEGER, board STRING REFERENCES boards (name) ON DELETE SET NULL ON UPDATE CASCADE, upc STRING, category TEXT REFERENCES categories (name) ON DELETE SET NULL ON UPDATE CASCADE, esrb STRING);
+CREATE TABLE games (
+    catalog_id TEXT PRIMARY KEY NOT NULL, 
+    class TEXT, 
+    title TEXT NOT NULL, 
+    system TEXT,  --  REFERENCES systems (name) ON DELETE SET NULL ON UPDATE CASCADE, 
+    region TEXT,  --  REFERENCES regions (name) ON DELETE SET NULL ON UPDATE CASCADE, 
+    publisher TEXT,  --  REFERENCES publishers (name) ON DELETE SET NULL ON UPDATE CASCADE, 
+    developer TEXT,  --  REFERENCES developers (name) ON DELETE SET NULL ON UPDATE CASCADE, 
+    date TEXT, 
+    "release" TEXT, 
+    players INTEGER, 
+    board TEXT,  --  REFERENCES boards (name) ON DELETE SET NULL ON UPDATE CASCADE, 
+    upc TEXT, 
+    category TEXT,  -- REFERENCES categories (name) ON DELETE SET NULL ON UPDATE CASCADE, 
+    esrb TEXT
+);
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('IPC-J1-01', 'Licensed', '''89 Dennou Kyuusei Uranai', 'Famicom', 'Japan', 'Jingukan', 'Micronics / Khaos', '1988-12-10', '1988-12-10', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('IF-02', 'Licensed', '10-Yard Fight', 'Famicom', 'Japan', 'Irem', 'Irem', '1985-08-30', '1985-08-30', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-TY-USA', 'Licensed', '10-Yard Fight', 'NES-NTSC', 'USA', 'Nintendo', 'Irem', '1985-10-18', '1985-10-18', 2, 'NES-NROM-256', 45496630270, '', '');
@@ -524,18 +716,18 @@ INSERT INTO games (catalog_id, class, title, system, region, publisher, develope
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('TEC-5U', 'Licensed', 'Battle Formula', 'Famicom', 'Japan', 'Sunsoft', 'Sunsoft', '1992-01-01', '1992-01-01', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('IGS-X8', 'Licensed', 'Battle Stadium: Senbatsu Pro Yakyuu', 'Famicom', 'Japan', 'IGS', 'Alfa System', '1989-10-01', '1989-10-01', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('YZW-9Y', 'Licensed', 'Battle Storm', 'Famicom', 'Japan', 'Party Room 21', 'Bullet-Proof Software', '1988-09-01', '1988-09-01', 2, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-9B-USA', 'Licensed', 'Battle Tank, Garry Kitchen''s', 'NES-NTSC', 'USA', 'Absolute', 'Imagineering', '1990-09', '1990-09', 1, 'NES-CNROM', 47875700048, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-9B-USA', 'Licensed', 'Battle Tank, Garry Kitchen''s', 'NES-NTSC', 'USA', 'Absolute', 'Imagineering', '1990-09-01', '1990-09-01', 1, 'NES-CNROM', 47875700048, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-AD-USA', 'Licensed', 'Battle of Olympus, The', 'NES-NTSC', 'USA', 'Brøderbund', 'Infinity', '1989-12', '1989-12', 1, 'NES-SGROM', 78915019103, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-AD-SCN', 'Licensed', 'Battle of Olympus, The', 'NES-PAL-B', 'Scandinavia', 'Nintendo', 'Infinity', '1991-09-26', '1991-09-26', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-AD-ESP', 'Licensed', 'Battle of Olympus, The', 'NES-PAL-B', 'Spain', 'Nintendo', 'Infinity', '1991-05-23', '1991-05-23', 1, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-BH-USA', 'Licensed', 'Battleship', 'NES-NTSC', 'USA', 'Mindscape', 'Mindscape', '1993-09', '1993-09', 1, 'NES-CNROM', 23582051574, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-BH-USA', 'Licensed', 'Battleship', 'NES-NTSC', 'USA', 'Mindscape', 'Mindscape', '1993-09-01', '1993-09-01', 1, 'NES-CNROM', 23582051574, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-BH-NOE', 'Licensed', 'Battleship', 'NES-PAL-B', 'Germany', 'Mindscape', 'Mindscape', '1993-09-13', '1993-09-13', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NCS-8T', 'Licensed', 'Battletoads', 'Famicom', 'Japan', 'Masaya', 'Rare', '1991-12-20', '1991-12-20', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-8T-USA', 'Licensed', 'Battletoads', 'NES-NTSC', 'USA', 'Tradewest', 'Rare', '1991-06', '1991-06', 2, 'NES-AOROM', 31719199112, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-8T-FRG', 'Licensed', 'Battletoads', 'NES-PAL-B', 'Europe', 'Tradewest', 'Rare', '1993-02-18', '1993-02-18', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-8T-SCN', 'Licensed', 'Battletoads', 'NES-PAL-B', 'Scandinavia', 'Tradewest', 'Rare', '1993-02-18', '1993-02-18', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-8T-ESP', 'Licensed', 'Battletoads', 'NES-PAL-B', 'Spain', 'Tradewest', 'Rare', '1993-02-18', '1993-02-18', 2, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-U8-USA', 'Licensed', 'Battletoads & Double Dragon: The Ultimate Team', 'NES-NTSC', 'USA', 'Tradewest', 'Rare', '1993-06', '1993-06', 2, 'NES-AOROM', 31719199242, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-U8-USA', 'Licensed', 'Battletoads & Double Dragon: The Ultimate Team', 'NES-NTSC', 'USA', 'Tradewest', 'Rare', '1993-06-01', '1993-06-01', 2, 'NES-AOROM', 31719199242, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-U8-UKV', 'Licensed', 'Battletoads & Double Dragon: The Ultimate Team', 'NES-PAL-A', 'United Kingdom', 'Nintendo', 'Rare', '1905-06-15', '1905-06-15', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('DFC-EP', 'Licensed', 'Be-Bop High School: Koukousei Gokuraku Densetsu', 'Famicom', 'Japan', 'Data East', 'Data East', '1988-03-30', '1988-03-30', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('CAM-BE', 'Unlicensed', 'Bee 52', 'NES-NTSC', 'USA', 'Camerica', 'Codemasters', '1905-06-14', '1905-06-14', 2, '', '', '', '');
@@ -551,13 +743,13 @@ INSERT INTO games (catalog_id, class, title, system, region, publisher, develope
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('WT-BB-6', 'Unlicensed', 'Bible Buffet', 'NES-NTSC', 'USA', 'Wisdom Tree', 'Wisdom Tree', '1905-06-15', '1905-06-15', 4, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('ALG-BFO', 'Unlicensed', 'Big Nose Freaks Out', 'NES-NTSC', 'USA', 'Camerica', 'Codemasters', '1992-11', '1992-11', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('CAM-BN', 'Unlicensed', 'Big Nose the Caveman', 'NES-NTSC', 'USA', 'Camerica', 'Codemasters', '1905-06-13', '1905-06-13', 1, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-A8-USA', 'Licensed', 'Bigfoot', 'NES-NTSC', 'USA', 'Acclaim', 'Beam Software', '1990-07', '1990-07', 2, 'NES-SLROM', 21481103042, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-A8-USA', 'Licensed', 'Bigfoot', 'NES-NTSC', 'USA', 'Acclaim', 'Beam Software', '1990-07-01', '1990-07-01', 2, 'NES-SLROM', 21481103042, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-A8-EEC', 'Licensed', 'Bigfoot', 'NES-PAL-B', 'Europe', 'Acclaim', 'Beam Software', '1991-01-24', '1991-01-24', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-A8-ESP', 'Licensed', 'Bigfoot', 'NES-PAL-B', 'Spain', 'Acclaim', 'Beam Software', '1992-04-04', '1992-04-04', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('TJC-NK', 'Licensed', 'Bikkuri Nekketsu Shin Kiroku! Harukanaru Kin Medal', 'Famicom', 'Japan', 'Technos', 'Technos', '1992-06-26', '1992-06-26', 4, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('HFC-V3', 'Licensed', 'Bikkuriman World: Gekitou Sei Senshi', 'Famicom', 'Japan', 'Hudson Soft', 'Atlus', '1990-07-27', '1990-07-27', 1, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-42-USA', 'Licensed', 'Bill & Ted''s Excellent Video Game Adventure', 'NES-NTSC', 'USA', 'LJN', 'Rocket Science Productions', '1991-08', '1991-08', 1, 'NES-SLROM', 23582051697, '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-EV-USA', 'Licensed', 'Bill Elliott''s NASCAR Challenge', 'NES-NTSC', 'USA', 'Konami', 'Distinctive Software', '1991-04', '1991-04', 1, 'NES-TSROM', 83717110194, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-42-USA', 'Licensed', 'Bill & Ted''s Excellent Video Game Adventure', 'NES-NTSC', 'USA', 'LJN', 'Rocket Science Productions', '1991-08-01', '1991-08-01', 1, 'NES-SLROM', 23582051697, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-EV-USA', 'Licensed', 'Bill Elliott''s NASCAR Challenge', 'NES-NTSC', 'USA', 'Konami', 'Distinctive Software', '1991-04-01', '1991-04-01', 1, 'NES-TSROM', 83717110194, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('HFC-BI', 'Licensed', 'Binary Land', 'Famicom', 'Japan', 'Hudson Soft', 'Hudson Soft', '1985-12-19', '1985-12-19', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('KON-RV102', 'Licensed', 'Bio Miracle Bokutte Upa', 'Famicom', 'Japan', 'Konami', 'Konami', '1993-02-26', '1993-02-26', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('JF-14', 'Licensed', 'Bio Senshi Dan: Increaser tono Tatakai', 'Famicom', 'Japan', 'Jaleco', 'Atlus', '1987-09-22', '1987-09-22', 1, '', '', '', '');
@@ -584,19 +776,19 @@ INSERT INTO games (catalog_id, class, title, system, region, publisher, develope
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-27-SCN', 'Licensed', 'Blue Shadow', 'NES-PAL-B', 'Scandinavia', 'Taito', 'Natsume', '1991-07-25', '1991-07-25', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-4Z-USA', 'Licensed', 'Blues Brothers, The', 'NES-NTSC', 'USA', 'Titus', 'Titus', '1992-09', '1992-09', 2, 'NES-UNROM', 86854002612, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-4Z-FRG', 'Licensed', 'Blues Brothers, The', 'NES-PAL-B', 'Germany', 'Titus', 'Titus', '1905-06-14', '1905-06-14', 2, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-4Z-ESP', 'Licensed', 'Blues Brothers, The', 'NES-PAL-B', 'Spain', 'Titus', 'Titus', '1992-09', '1992-09', 2, '', '', '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-4Z-ESP', 'Licensed', 'Blues Brothers, The', 'NES-PAL-B', 'Spain', 'Titus', 'Titus', '1992-09-01', '1992-09-01', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-6J-USA', 'Licensed', 'Bo Jackson Baseball', 'NES-NTSC', 'USA', 'Data East', 'Beam Software', '1991-10', '1991-10', 2, 'NES-TSROM', 13252002210, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('HSP-04', 'Licensed', 'Bokosuka Wars', 'Famicom', 'Japan', 'ASCII', 'Bits Laboratory', '1985-12-14', '1985-12-14', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('HFC-BX', 'Licensed', 'Bomber King', 'Famicom', 'Japan', 'Hudson Soft', 'Hudson Soft', '1987-08-07', '1987-08-07', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('HFC-BM', 'Licensed', 'Bomberman', 'Famicom', 'Japan', 'Hudson Soft', 'Hudson Soft', '1985-12-19', '1985-12-19', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-BM-USA', 'Licensed', 'Bomberman', 'NES-NTSC', 'USA', 'Hudson Soft', 'Hudson Soft', '1989-01', '1989-01', 1, 'NES-NROM-128', 39854000034, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('HFC-2X', 'Licensed', 'Bomberman II', 'Famicom', 'Japan', 'Hudson Soft', 'Hudson Soft', '1991-06-28', '1991-06-28', 2, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-BW-USA', 'Licensed', 'Bomberman II', 'NES-NTSC', 'USA', 'Hudson Soft', 'Hudson Soft', '1993-02', '1993-02', 2, 'NES-SNROM', 39854000188, '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-K8-USA', 'Licensed', 'Bonk''s Adventure', 'NES-NTSC', 'USA', 'Hudson Soft', 'Red Company', '1994-01', '1994-01', 1, 'NES-TLROM', 39854000393, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-BW-USA', 'Licensed', 'Bomberman II', 'NES-NTSC', 'USA', 'Hudson Soft', 'Hudson Soft', '1993-02-01', '1993-02-01', 2, 'NES-SNROM', 39854000188, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-K8-USA', 'Licensed', 'Bonk''s Adventure', 'NES-NTSC', 'USA', 'Hudson Soft', 'Red Company', '1994-01-01', '1994-01-01', 1, 'NES-TLROM', 39854000393, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NBF-BB (05)', 'Licensed', 'Booby Kids', 'Famicom', 'Japan', 'Nichibutsu', 'Nichibutsu', '1987-07-10', '1987-07-10', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('CN-08', 'Unlicensed', 'Booky Man', 'NES-PAL', 'Spain', 'Gluk Video', 'MegaSoft', '1992-01-01', '1992-01-01', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('DFC-XB', 'Licensed', 'Boulder Dash', 'Famicom', 'Japan', 'Data East', 'First Star Software', '1990-03-23', '1990-03-23', 2, '', '', '', '');
-INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-XB-USA', 'Licensed', 'Boulder Dash', 'NES-NTSC', 'USA', 'JVC', 'First Star Software', '1990-06', '1990-06', 2, 'NES-SEROM', 9119313490, '', '');
+INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-XB-USA', 'Licensed', 'Boulder Dash', 'NES-NTSC', 'USA', 'JVC', 'First Star Software', '1990-06-01', '1990-06-01', 2, 'NES-SEROM', 9119313490, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-XB-FRG', 'Licensed', 'Boulder Dash', 'NES-PAL-B', 'Germany', 'Nintendo', 'First Star Software', '1900-01-00', '1900-01-00', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-XB-ESP', 'Licensed', 'Boulder Dash', 'NES-PAL-B', 'Spain', 'Nintendo', 'First Star Software', '1991-11-01', '1991-11-01', 2, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-B5-USA', 'Licensed', 'Boy and His Blob, A: Trouble on Blobolonia, David Crane''s', 'NES-NTSC', 'USA', 'Absolute', 'Imagineering', '1990-01', '1990-01', 1, 'NES-SLROM', 47875700130, '', '');
@@ -2716,184 +2908,3 @@ INSERT INTO games (catalog_id, class, title, system, region, publisher, develope
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('HSS-ZO', 'Licensed', 'Zombie Hunter', 'Famicom', 'Japan', 'Hi-Score Software', 'Lenar', '1987-07-03', '1987-07-03', 1, '', '', '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('NES-51-USA', 'Licensed', 'Zombie Nation', 'NES-NTSC', 'USA', 'Meldac', 'KAZe', '1991-09', '1991-09', 1, 'NES-TLROM', 8433291019, '', '');
 INSERT INTO games (catalog_id, class, title, system, region, publisher, developer, date, "release", players, board, upc, category, esrb) VALUES ('DBF-GA', 'Licensed', 'Zunou Senkan Galg', 'Famicom', 'Japan', 'dB-SOFT', 'dB-SOFT', '1985-12-14', '1985-12-14', 2, '', '', '', '');
-
--- Table: publishers
-CREATE TABLE publishers (name TEXT PRIMARY KEY NOT NULL UNIQUE);
-INSERT INTO publishers (name) VALUES ('A Wave');
-INSERT INTO publishers (name) VALUES ('Absolute');
-INSERT INTO publishers (name) VALUES ('Acclaim');
-INSERT INTO publishers (name) VALUES ('Active Enterprises');
-INSERT INTO publishers (name) VALUES ('Activision');
-INSERT INTO publishers (name) VALUES ('AGCI');
-INSERT INTO publishers (name) VALUES ('Altron');
-INSERT INTO publishers (name) VALUES ('American Softworks');
-INSERT INTO publishers (name) VALUES ('Angel');
-INSERT INTO publishers (name) VALUES ('Arcadia');
-INSERT INTO publishers (name) VALUES ('ASCII');
-INSERT INTO publishers (name) VALUES ('Asmik');
-INSERT INTO publishers (name) VALUES ('Athena');
-INSERT INTO publishers (name) VALUES ('Atlus');
-INSERT INTO publishers (name) VALUES ('AVE');
-INSERT INTO publishers (name) VALUES ('Bandai');
-INSERT INTO publishers (name) VALUES ('Banpresto');
-INSERT INTO publishers (name) VALUES ('Beam Software');
-INSERT INTO publishers (name) VALUES ('Bothtec (Quest)');
-INSERT INTO publishers (name) VALUES ('Brøderbund');
-INSERT INTO publishers (name) VALUES ('Bullet-Proof Software');
-INSERT INTO publishers (name) VALUES ('Bunch Games');
-INSERT INTO publishers (name) VALUES ('Caltron');
-INSERT INTO publishers (name) VALUES ('Camerica');
-INSERT INTO publishers (name) VALUES ('Capcom');
-INSERT INTO publishers (name) VALUES ('CBS / Sony Group');
-INSERT INTO publishers (name) VALUES ('CCE');
-INSERT INTO publishers (name) VALUES ('Character Soft');
-INSERT INTO publishers (name) VALUES ('Coconuts');
-INSERT INTO publishers (name) VALUES ('Codemasters');
-INSERT INTO publishers (name) VALUES ('Color Dreams');
-INSERT INTO publishers (name) VALUES ('Culture Brain');
-INSERT INTO publishers (name) VALUES ('Data East');
-INSERT INTO publishers (name) VALUES ('dB-SOFT');
-INSERT INTO publishers (name) VALUES ('Electro Brain');
-INSERT INTO publishers (name) VALUES ('Electronic Arts');
-INSERT INTO publishers (name) VALUES ('Elite');
-INSERT INTO publishers (name) VALUES ('Enix');
-INSERT INTO publishers (name) VALUES ('Epic / Sony Records');
-INSERT INTO publishers (name) VALUES ('Epoch');
-INSERT INTO publishers (name) VALUES ('Face');
-INSERT INTO publishers (name) VALUES ('FCI');
-INSERT INTO publishers (name) VALUES ('Fuji TV');
-INSERT INTO publishers (name) VALUES ('Gakken');
-INSERT INTO publishers (name) VALUES ('Galoob');
-INSERT INTO publishers (name) VALUES ('GameTek');
-INSERT INTO publishers (name) VALUES ('Gluk Video');
-INSERT INTO publishers (name) VALUES ('GO 1');
-INSERT INTO publishers (name) VALUES ('Gradiente');
-INSERT INTO publishers (name) VALUES ('Gremlin');
-INSERT INTO publishers (name) VALUES ('HAL Laboratory');
-INSERT INTO publishers (name) VALUES ('Hect');
-INSERT INTO publishers (name) VALUES ('HES');
-INSERT INTO publishers (name) VALUES ('Hi Tech Expressions');
-INSERT INTO publishers (name) VALUES ('Hi-Score Software');
-INSERT INTO publishers (name) VALUES ('HOT・B');
-INSERT INTO publishers (name) VALUES ('Hudson Soft');
-INSERT INTO publishers (name) VALUES ('Human Entertainment');
-INSERT INTO publishers (name) VALUES ('IGS');
-INSERT INTO publishers (name) VALUES ('Imagineer');
-INSERT INTO publishers (name) VALUES ('I''Max');
-INSERT INTO publishers (name) VALUES ('Infocom');
-INSERT INTO publishers (name) VALUES ('Infogrames');
-INSERT INTO publishers (name) VALUES ('INTV');
-INSERT INTO publishers (name) VALUES ('Irem');
-INSERT INTO publishers (name) VALUES ('Jaleco');
-INSERT INTO publishers (name) VALUES ('Jingukan');
-INSERT INTO publishers (name) VALUES ('JVC');
-INSERT INTO publishers (name) VALUES ('KAC');
-INSERT INTO publishers (name) VALUES ('Kawada');
-INSERT INTO publishers (name) VALUES ('Kemco');
-INSERT INTO publishers (name) VALUES ('King Records');
-INSERT INTO publishers (name) VALUES ('Koei');
-INSERT INTO publishers (name) VALUES ('Konami');
-INSERT INTO publishers (name) VALUES ('Kyugo Boueki');
-INSERT INTO publishers (name) VALUES ('LJN');
-INSERT INTO publishers (name) VALUES ('Login Soft');
-INSERT INTO publishers (name) VALUES ('Loriciel');
-INSERT INTO publishers (name) VALUES ('M&M');
-INSERT INTO publishers (name) VALUES ('Masaya');
-INSERT INTO publishers (name) VALUES ('Matchbox');
-INSERT INTO publishers (name) VALUES ('Mattel');
-INSERT INTO publishers (name) VALUES ('Meldac');
-INSERT INTO publishers (name) VALUES ('Microprose');
-INSERT INTO publishers (name) VALUES ('Milton Bradley');
-INSERT INTO publishers (name) VALUES ('Mindscape');
-INSERT INTO publishers (name) VALUES ('Namco');
-INSERT INTO publishers (name) VALUES ('Natsume');
-INSERT INTO publishers (name) VALUES ('Nexoft');
-INSERT INTO publishers (name) VALUES ('Nichibutsu');
-INSERT INTO publishers (name) VALUES ('Nintendo');
-INSERT INTO publishers (name) VALUES ('NTVIC');
-INSERT INTO publishers (name) VALUES ('Ocean');
-INSERT INTO publishers (name) VALUES ('Pack-In-Video');
-INSERT INTO publishers (name) VALUES ('Palcom');
-INSERT INTO publishers (name) VALUES ('Panesian');
-INSERT INTO publishers (name) VALUES ('Parker Brothers');
-INSERT INTO publishers (name) VALUES ('Party Room 21');
-INSERT INTO publishers (name) VALUES ('Pixel');
-INSERT INTO publishers (name) VALUES ('Pony Canyon');
-INSERT INTO publishers (name) VALUES ('RacerMate');
-INSERT INTO publishers (name) VALUES ('Rix Soft');
-INSERT INTO publishers (name) VALUES ('Romstar');
-INSERT INTO publishers (name) VALUES ('Sachen / Joy Van');
-INSERT INTO publishers (name) VALUES ('Sammy');
-INSERT INTO publishers (name) VALUES ('Sanritsu');
-INSERT INTO publishers (name) VALUES ('SEI');
-INSERT INTO publishers (name) VALUES ('Seta');
-INSERT INTO publishers (name) VALUES ('Sharp');
-INSERT INTO publishers (name) VALUES ('Shinsei');
-INSERT INTO publishers (name) VALUES ('Sigma Enterprises');
-INSERT INTO publishers (name) VALUES ('SNK');
-INSERT INTO publishers (name) VALUES ('Sofel');
-INSERT INTO publishers (name) VALUES ('Soft Pro');
-INSERT INTO publishers (name) VALUES ('Sony (CSG) Imagesoft');
-INSERT INTO publishers (name) VALUES ('Square');
-INSERT INTO publishers (name) VALUES ('Storm');
-INSERT INTO publishers (name) VALUES ('Sunsoft');
-INSERT INTO publishers (name) VALUES ('Taito');
-INSERT INTO publishers (name) VALUES ('Takara');
-INSERT INTO publishers (name) VALUES ('Taxan');
-INSERT INTO publishers (name) VALUES ('Technos');
-INSERT INTO publishers (name) VALUES ('Tecmo');
-INSERT INTO publishers (name) VALUES ('Tengen');
-INSERT INTO publishers (name) VALUES ('The Software Toolworks');
-INSERT INTO publishers (name) VALUES ('THQ');
-INSERT INTO publishers (name) VALUES ('Titus');
-INSERT INTO publishers (name) VALUES ('Toei Animation');
-INSERT INTO publishers (name) VALUES ('Toemiland');
-INSERT INTO publishers (name) VALUES ('Toho');
-INSERT INTO publishers (name) VALUES ('Tokuma Shoten');
-INSERT INTO publishers (name) VALUES ('Tokyo Shoseki');
-INSERT INTO publishers (name) VALUES ('Tomy');
-INSERT INTO publishers (name) VALUES ('Tonkin House');
-INSERT INTO publishers (name) VALUES ('Towa Chiki');
-INSERT INTO publishers (name) VALUES ('Tradewest');
-INSERT INTO publishers (name) VALUES ('Triffix');
-INSERT INTO publishers (name) VALUES ('TSS');
-INSERT INTO publishers (name) VALUES ('UBI Soft');
-INSERT INTO publishers (name) VALUES ('Ultra Games');
-INSERT INTO publishers (name) VALUES ('Use');
-INSERT INTO publishers (name) VALUES ('Vap');
-INSERT INTO publishers (name) VALUES ('Varie');
-INSERT INTO publishers (name) VALUES ('Vic Tokai');
-INSERT INTO publishers (name) VALUES ('Victor');
-INSERT INTO publishers (name) VALUES ('Virgin Games');
-INSERT INTO publishers (name) VALUES ('Visco');
-INSERT INTO publishers (name) VALUES ('Wisdom Tree');
-INSERT INTO publishers (name) VALUES ('Yutaka');
-
--- Table: regions
-CREATE TABLE regions (name TEXT PRIMARY KEY UNIQUE);
-INSERT INTO regions (name) VALUES ('Australia');
-INSERT INTO regions (name) VALUES ('Brazil');
-INSERT INTO regions (name) VALUES ('Canada');
-INSERT INTO regions (name) VALUES ('Europe');
-INSERT INTO regions (name) VALUES ('France');
-INSERT INTO regions (name) VALUES ('Germany');
-INSERT INTO regions (name) VALUES ('Italy');
-INSERT INTO regions (name) VALUES ('Japan');
-INSERT INTO regions (name) VALUES ('Netherlands');
-INSERT INTO regions (name) VALUES ('Scandinavia');
-INSERT INTO regions (name) VALUES ('Spain');
-INSERT INTO regions (name) VALUES ('Sweden');
-INSERT INTO regions (name) VALUES ('Taiwan');
-INSERT INTO regions (name) VALUES ('United Kingdom');
-INSERT INTO regions (name) VALUES ('USA');
-
--- Table: systems
-CREATE TABLE systems (name TEXT PRIMARY KEY UNIQUE);
-INSERT INTO systems (name) VALUES ('Famicom');
-INSERT INTO systems (name) VALUES ('NES-NTSC');
-INSERT INTO systems (name) VALUES ('NES-PAL');
-INSERT INTO systems (name) VALUES ('NES-PAL-A');
-INSERT INTO systems (name) VALUES ('NES-PAL-B');
-
-COMMIT TRANSACTION;
-PRAGMA foreign_keys = on;

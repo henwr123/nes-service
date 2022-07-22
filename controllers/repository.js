@@ -47,9 +47,9 @@ class Repository {
             }
 
             if (filter === "") {
-                filter = ' WHERE ' + key + ' LIKE "' + value + '" '
+                filter = ' WHERE LOWER(' + key + `) LIKE LOWER('` + value + `') `
             } else {
-                filter = filter + 'AND ' + key + ' LIKE "' + value + '" '
+                filter = filter + 'AND LOWER(' + key + `) LIKE LOWER('` + value + `') `
             }
         })
 
@@ -63,6 +63,7 @@ class Repository {
      * @returns result from the catalog selection - one record for the catalog entry
      */
     getById(id) {
+        //return this.dao.get(this.TABLE, this.PRIMARY_KEY, id)
         return this.dao.get(this.SELECT_STATEMENT + ` WHERE ${this.PRIMARY_KEY} = ?`, id)
     }
 
