@@ -47,9 +47,9 @@ class Repository {
             }
 
             if (filter === "") {
-                filter = ' WHERE LOWER(' + key + `) LIKE LOWER('` + value + `') `
+                filter = ` WHERE LOWER(${key}) LIKE LOWER('${value}') `
             } else {
-                filter = filter + 'AND LOWER(' + key + `) LIKE LOWER('` + value + `') `
+                filter = `${filter} AND LOWER(${key}) LIKE LOWER('${value}') `
             }
         })
 
