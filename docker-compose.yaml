@@ -27,13 +27,13 @@ services:
       - /app/node_modules
     depends_on:
       - db
-  api-test:
-    image: nes-service-api
-    command: npm test
-    environment:
-      APP_URL: http://localhost:4321
-    depends_on:
-      - api
+#  api-test:
+#    image: nes-service-api
+#    command: npm test
+#    environment:
+#      APP_URL: http://localhost:4321
+#    depends_on:
+#      - api
 volumes:
   nes-db:
     driver: local
