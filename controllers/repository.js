@@ -19,9 +19,9 @@ class Repository {
         let sort = ""
 
         if (params.orderBy !== undefined) {
-            sort = " ORDER BY " + params.orderBy
+            sort = ` ORDER BY ${params.orderBy}`
         } else {
-            sort = " ORDER BY " + def
+            sort = ` ORDER BY ${def}`
         }
 
         return sort
@@ -64,7 +64,7 @@ class Repository {
      */
     getById(id) {
         //return this.dao.get(this.TABLE, this.PRIMARY_KEY, id)
-        return this.dao.get(this.SELECT_STATEMENT + ` WHERE ${this.PRIMARY_KEY} = ?`, id)
+        return this.dao.get(`${this.SELECT_STATEMENT} WHERE ${this.PRIMARY_KEY} = ?`, id)
     }
 
     /**
