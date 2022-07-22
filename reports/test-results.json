@@ -1,0 +1,781 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 42,
+    "passes": 41,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-07-22T22:16:39.064Z",
+    "end": "2022-07-22T22:16:39.409Z",
+    "duration": 345
+  },
+  "tests": [
+    {
+      "title": "Systems - should be able to get list of 5 items",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to get list of 5 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: Cannot read properties of undefined (reading 'statusCode')\n    at Test.<anonymous> (tests/e2e/test.spec.js:124:28)\n    at Test.assert (node_modules/supertest/lib/test.js:172:8)\n    at localAssert (node_modules/supertest/lib/test.js:120:14)\n    at /Users/william/projects/nes-service/node_modules/supertest/lib/test.js:125:7\n    at Test.Request.callback (node_modules/superagent/lib/node/index.js:928:3)\n    at ClientRequest.<anonymous> (node_modules/superagent/lib/node/index.js:844:10)\n    at ClientRequest.emit (node:events:390:28)\n    at Socket.socketOnEnd (node:_http_client:471:9)\n    at Socket.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)",
+        "message": "Cannot read properties of undefined (reading 'statusCode')",
+        "uncaught": true
+      }
+    },
+    {
+      "title": "Systems - should be able to get an item value 'NES-NTSC' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to get an item value 'NES-NTSC' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 58,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to filter by value 'NES-NTSC' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to filter by value 'NES-NTSC' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 7,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to filter by pattern 'pAl' and find 3 records",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to filter by pattern 'pAl' and find 3 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to get list of 67 items",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to get list of 67 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to get an item value 'HVC-CNROM' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to get an item value 'HVC-CNROM' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to filter by value 'HVC-CNROM' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to filter by value 'HVC-CNROM' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to filter by pattern 'An' and find 2 records",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to filter by pattern 'An' and find 2 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to get list of 15 items",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to get list of 15 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to get an item value 'Brazil' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to get an item value 'Brazil' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to filter by value 'Brazil' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to filter by value 'Brazil' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to filter by pattern 'An' and find 7 records",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to filter by pattern 'An' and find 7 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to get list of 149 items",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to get list of 149 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to filter by pattern 'SoFtWaRe' and find 4 records",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to filter by pattern 'SoFtWaRe' and find 4 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to get list of 229 items",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to get list of 229 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to filter by pattern 'SoFtWaRe' and find 15 records",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to filter by pattern 'SoFtWaRe' and find 15 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to get list of 15 items",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to get list of 15 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to get an item value 'Programmable' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to get an item value 'Programmable' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to filter by value 'Programmable' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to filter by value 'Programmable' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to filter by pattern 'eR' and find 2 records",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to filter by pattern 'eR' and find 2 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to get list of 2388 items",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to get list of 2388 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 42,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to get an item value 'NES-MT-USA' for property 'catalog_id'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to get an item value 'NES-MT-USA' for property 'catalog_id'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to filter by value 'NES-MT-USA' for property 'catalog_id'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to filter by value 'NES-MT-USA' for property 'catalog_id'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to filter by pattern 'mArIo' and find 42 records",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to filter by pattern 'mArIo' and find 42 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to sort desc on property 'title'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to sort desc on property 'title'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 36,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to sort asc on property 'title'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to sort asc on property 'title'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 39,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "Systems - should be able to get list of 5 items",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to get list of 5 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: Cannot read properties of undefined (reading 'statusCode')\n    at Test.<anonymous> (tests/e2e/test.spec.js:124:28)\n    at Test.assert (node_modules/supertest/lib/test.js:172:8)\n    at localAssert (node_modules/supertest/lib/test.js:120:14)\n    at /Users/william/projects/nes-service/node_modules/supertest/lib/test.js:125:7\n    at Test.Request.callback (node_modules/superagent/lib/node/index.js:928:3)\n    at ClientRequest.<anonymous> (node_modules/superagent/lib/node/index.js:844:10)\n    at ClientRequest.emit (node:events:390:28)\n    at Socket.socketOnEnd (node:_http_client:471:9)\n    at Socket.emit (node:events:402:35)\n    at endReadableNT (node:internal/streams/readable:1343:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)",
+        "message": "Cannot read properties of undefined (reading 'statusCode')",
+        "uncaught": true
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "Systems - should be able to get an item value 'NES-NTSC' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to get an item value 'NES-NTSC' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 58,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to filter by value 'NES-NTSC' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to filter by value 'NES-NTSC' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 7,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to filter by pattern 'pAl' and find 3 records",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to filter by pattern 'pAl' and find 3 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Systems - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 1. Systems Tests Systems - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to get list of 67 items",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to get list of 67 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to get an item value 'HVC-CNROM' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to get an item value 'HVC-CNROM' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to filter by value 'HVC-CNROM' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to filter by value 'HVC-CNROM' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to filter by pattern 'An' and find 2 records",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to filter by pattern 'An' and find 2 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Boards - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 2. Boards Tests Boards - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to get list of 15 items",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to get list of 15 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to get an item value 'Brazil' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to get an item value 'Brazil' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to filter by value 'Brazil' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to filter by value 'Brazil' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to filter by pattern 'An' and find 7 records",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to filter by pattern 'An' and find 7 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Regions - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 3. Regions Tests Regions - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to get list of 149 items",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to get list of 149 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to filter by pattern 'SoFtWaRe' and find 4 records",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to filter by pattern 'SoFtWaRe' and find 4 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Publishers - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 4. Publishers Tests Publishers - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to get list of 229 items",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to get list of 229 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to get an item value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to filter by value 'Brøderbund' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to filter by pattern 'SoFtWaRe' and find 15 records",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to filter by pattern 'SoFtWaRe' and find 15 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Developers - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 5. Developers Tests Developers - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to get list of 15 items",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to get list of 15 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to get an item value 'Programmable' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to get an item value 'Programmable' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to filter by value 'Programmable' for property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to filter by value 'Programmable' for property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to filter by pattern 'eR' and find 2 records",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to filter by pattern 'eR' and find 2 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to sort desc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to sort desc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Categories - should be able to sort asc on property 'name'",
+      "fullTitle": "Testing the nes-service API - Get Data 6. Categories Tests Categories - should be able to sort asc on property 'name'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 3,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to get list of 2388 items",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to get list of 2388 items",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 42,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to get an item value 'NES-MT-USA' for property 'catalog_id'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to get an item value 'NES-MT-USA' for property 'catalog_id'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to filter by value 'NES-MT-USA' for property 'catalog_id'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to filter by value 'NES-MT-USA' for property 'catalog_id'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 4,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to filter by pattern 'mArIo' and find 42 records",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to filter by pattern 'mArIo' and find 42 records",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 5,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to sort desc on property 'title'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to sort desc on property 'title'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 36,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Games - should be able to sort asc on property 'title'",
+      "fullTitle": "Testing the nes-service API - Get Data 7. Games Tests Games - should be able to sort asc on property 'title'",
+      "file": "/Users/william/projects/nes-service/tests/e2e/test.spec.js",
+      "duration": 39,
+      "currentRetry": 0,
+      "speed": "medium",
+      "err": {}
+    }
+  ]
+}
