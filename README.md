@@ -150,3 +150,5 @@ https://towardsdev.com/docker-for-local-node-js-development-164844df5cb6
 
 Used this to determine the IP address for the calling application:
 https://stackfame.com/get-ip-address-node
+
+https://geshan.com.np/blog/2021/12/docker-postgres/

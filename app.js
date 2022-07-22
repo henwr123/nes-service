@@ -6,27 +6,8 @@ const app = express();
 const port = process.env.PORT || 4321;
 
 
-/*
-const config = require('./config')
-
-const db = require('knex')({
-    client: 'pg',
-    connection: {
-      host : config.db.host,
-      user : config.db.user,
-      password : config.db.password,
-    },
-  });
-
-  db('developers')
-    .select('name')
-    .then(devs => console.log(devs))
-    .catch(err => {
-        console.log(`Unable to fetch developers: ${err.message}. ${err.stack}`)
-  })
-*/
-
 const LOG_DETAILED = true
+
 
 // load the controllers for the data access
 const AppDAO = require('./controllers/dao')
