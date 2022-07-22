@@ -31,7 +31,7 @@ const test_setup = [
         fullListSize: 15,
         id: 'Brazil',
         firstItem: 'Australia',
-        lastItem: 'United Kingdom',
+        lastItem: 'USA',
         pattern: 'An',
         patternMatchSize: 7
     },
@@ -40,8 +40,8 @@ const test_setup = [
         property: 'name',
         fullListSize: 149,
         id: 'Brøderbund',
-        firstItem: 'A Wave',
-        lastItem: 'dB-SOFT',
+        firstItem: 'Absolute',
+        lastItem: 'Yutaka',
         pattern: 'SoFtWaRe',
         patternMatchSize: 4
     },
@@ -50,8 +50,8 @@ const test_setup = [
         property: 'name',
         fullListSize: 229,
         id: 'Brøderbund',
-        firstItem: 'A.I',
-        lastItem: 'dB-SOFT',
+        firstItem: 'Accolade',
+        lastItem: 'Zippo Games',
         pattern: 'SoFtWaRe',
         patternMatchSize: 15
     },
@@ -71,7 +71,7 @@ const test_setup = [
         fullListSize: 2388,
         key: 'catalog_id',
         id: 'NES-MT-USA',
-        firstItem: 1942,
+        firstItem: '10-Yard Fight',
         lastItem: 'Zunou Senkan Galg',
         pattern: 'mArIo',
         patternMatchSize: 42
